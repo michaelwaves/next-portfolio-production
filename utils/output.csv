@@ -1,0 +1,91 @@
+text,title
+Badminton,Badminton
+Bag Things,{book.title}
+Cool Books,{book.title}
+CoverMeGPT,CoverMeGPT
+"First, create a profile",CoverMeGPT
+"Next, paste in the job requirements",CoverMeGPT
+"Custom profiles are stored using <UnderLine text='Firebase' href=""https://firebase.google.com/"" />",CoverMeGPT
+Generated cover letters can be tweaked in a text editor and downloaded as pdf,CoverMeGPT
+React,CoverMeGPT
+OpenAI,CoverMeGPT
+Firebase,CoverMeGPT
+TailwindCSS,CoverMeGPT
+Cool Beats,{music.title}
+Community Advisor,Community Advisor
+Michael's Room,Michael's Room
+Left Click Drag to Orbit,Michael's Room
+Right Click Drag to Pan,Michael's Room
+Scroll to Zoom,Michael's Room
+Let's Go!,Michael's Room
+Lumigui,Lumigui
+We used microsoft text to speech for voice typing,Lumigui
+"A custom box was designed using  <UnderLine text='Blender' href=""https://blender.org"" />",Lumigui
+Five photoresistors were used to detect the user's hand,Lumigui
+React,Lumigui
+PyAutoGUI,Lumigui
+Blender,Lumigui
+PrusaSlicer,Lumigui
+MLH Fellowship,MLH Fellowship
+NEAR IP,NEAR IP
+We used parcel and tailwindcss for the frontend,NEAR IP
+"Firebase was used to store pdfs for the patents, since on chain storage is limited.",NEAR IP
+React,NEAR IP
+NEAR Protocol,NEAR IP
+Parcel,NEAR IP
+Firebase,NEAR IP
+Piano,Piano
+PingPong,PingPong
+Ping Pong,PingPong
+PingPong,PingPong
+Ping Pong,PingPong
+3D Printing Club,3D Printing Club
+I drafted a mandate and budget and passed it through the student Governing Council ,3D Printing Club
+"Once that was approved, I worked with facilities staff and an assistant registrar to secure a space and buy a storage cabinet",3D Printing Club
+"I put together a team of great executives, in charge of finance, operations, and marketing",3D Printing Club
+"We ran weekly events teaching people how to 3D model in Blender, slice models in PrusaSlicer, and print their models.",3D Printing Club
+We also made some magnetic pins,3D Printing Club
+QHacks,QHacks
+The data was scraped using Beautiful Soup.,QHacks
+Jaccard similarity was used to find relevant text that specifically mentioned key words in the user's question.,QHacks
+Relevant texts were narrowed down and passed as part of the prompt to GPT-3 for an answer completion.,QHacks
+The website along with the voice functionality were created using React.,QHacks
+React,QHacks
+Flask,QHacks
+OpenAI,QHacks
+Python &#40;for webscraping&#41;,QHacks
+Ramuri,Ramuri
+"I attended Bayview Secondary School in Richmond Hill, Canada, and graduated from the International Baccalaureate program with a 42/45. ","
+                        University
+                    "
+Education,Education
+High School,Education
+"I attended Bayview Secondary School in Richmond Hill, Canada, and graduated from the International Baccalaureate program with a 42/45. ",Education
+Tailor,Tailor
+"First, the user inputs words as prompts",Tailor
+We used  tailwindcss for styling,Tailor
+"The output image was sent to the user's phone using <UnderLine text='Twilio' href=""https://www.twilio.com/en-us"" />",Tailor
+React,Tailor
+Dalle API,Tailor
+TailwindCSS,Tailor
+Twilio,Tailor
+"We won Best Domain Name at UOttaHack 5, and made some new friends who also go to UofT",Tailor
+UTMIST,UTMIST
+AI Hackathon,UTMIST
+I helped plan an AI hackathon and taught a Python Tweet Classification Workshop ,UTMIST
+The VocalVerse,The VocalVerse
+"Chats are then saved to <UnderLine text=""Firebase"" href=""https://firebase.google.com/"" />",The VocalVerse
+React,The VocalVerse
+OpenAI API,The VocalVerse
+Firebase,The VocalVerse
+ElevenLabs API,The VocalVerse
+Welcome Desk,Welcome Desk
+Checking Students In and Out,Welcome Desk
+Receiving Mail and Parcels,Welcome Desk
+Answering Questions,Welcome Desk
+Preparing Shift Reports,Welcome Desk
+Managing the Lost and Found,Welcome Desk
+Room Bookings,Welcome Desk
+Student Lockouts,Welcome Desk
+Answering Phones,Welcome Desk
+Other Office Tasks,Welcome Desk

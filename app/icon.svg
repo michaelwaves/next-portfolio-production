@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="62.289 38.158 369.247 421.998" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <path style="stroke-width: 36px; fill: none; stroke: rgb(251, 107, 29); transform-origin: 169.332px 324.355px;" d="M 246.773 445.287 L 246.212 283.67 L 91.891 203.423" transform="matrix(1, 0, 0, 1, -0.000007629396, 0.000015258793)"/>
+  <path d="M 241.546 58.888 Q 246.493 55.992 251.44 58.888 L 406.444 149.633 Q 411.391 152.529 411.391 158.321 L 411.391 339.811 Q 411.391 345.603 406.444 348.499 L 251.44 439.244 Q 246.493 442.14 241.546 439.244 L 86.542 348.499 Q 81.595 345.603 81.595 339.811 L 81.595 158.321 Q 81.595 152.529 86.542 149.633 Z" style="fill: none; stroke: rgb(251, 107, 29); stroke-width: 36px; transform-origin: 246.493px 249.066px;" bx:shape="n-gon 246.493 249.066 190.408 193.074 6 0.03 1@1928f8c6"/>
+  <path style="fill: rgb(216, 216, 216); stroke-width: 36px; stroke: rgb(251, 107, 29); transform-origin: 326.179px 240.46px;" d="M 250.702 281.425 L 401.656 199.495" transform="matrix(1, 0, 0, 1, -0.000015258793, 0)"/>
+  <path style="fill-opacity: 0; fill-rule: evenodd; stroke-linecap: round; stroke-linejoin: round; stroke-width: 36px; fill: none; stroke: rgb(77, 155, 230); transform-origin: 246.494px 248.879px;" d="M 81.791 341.47 L 81.791 156.846 L 245.651 246.072 L 411.196 156.286 C 411.196 163.281 411.195 341.472 411.195 341.472" transform="matrix(1, 0, 0, 1, 0, -0.000007629396)"/>
+</svg>
