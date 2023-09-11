@@ -23,30 +23,30 @@ const vt323 = VT323({ subsets: ['latin'], weight: ["400"], variable: "--font-vt3
 const pressStart2P = Press_Start_2P({ subsets: ['latin'], weight: ["400"], variable: "--font-press" })
 
 //pages
-import Qhacks from '@/pages/Qhacks';
-import Lumigui2 from "@/pages/Lumigui2";
-import NEAR from "@/pages/NEAR";
-import Tailor from "@/pages/Tailor";
-import Vocalverse from "@/pages/Vocalverse";
-import CoverMeGPT from "@/pages/CoverMeGPT";
+import Qhacks from '@/mypages/Qhacks';
+import Lumigui2 from "@/mypages/Lumigui2";
+import NEAR from "@/mypages/NEAR";
+import Tailor from "@/mypages/Tailor";
+import Vocalverse from "@/mypages/Vocalverse";
+import CoverMeGPT from "@/mypages/CoverMeGPT";
 
-import RiseDesk from "@/pages/RiseDesk/RiseDesk";
-import Book from "@/pages/Books";
-import BagPage from "@/pages/BagPage";
-import Skills from "@/pages/Skills/Skills";
-import MLH from "@/pages/MLH";
-import Ramuri from "@/pages/Ramuri";
-import Rotman from "@/pages/Rotman";
-import PrintingClub from "@/pages/PrintingClub";
-import Don from "@/pages/Don";
-import Utmist from "@/pages/Utmist";
-import WelcomeDesk from "@/pages/WelcomeDesk";
-import Badminton from "@/pages/Badminton";
-import PingPong from "@/pages/PingPong";
-import Piano from "@/pages/Piano";
-import Cloudbreak from "@/pages/Cloudbreak";
+import RiseDesk from "@/mypages/RiseDesk/RiseDesk";
+import Book from "@/mypages/Books";
+import BagPage from "@/mypages/BagPage";
+import Skills from "@/mypages/Skills/Skills";
+import MLH from "@/mypages/MLH";
+import Ramuri from "@/mypages/Ramuri";
+import Rotman from "@/mypages/Rotman";
+import PrintingClub from "@/mypages/PrintingClub";
+import Don from "@/mypages/Don";
+import Utmist from "@/mypages/Utmist";
+import WelcomeDesk from "@/mypages/WelcomeDesk";
+import Badminton from "@/mypages/Badminton";
+import PingPong from "@/mypages/PingPong";
+import Piano from "@/mypages/Piano";
+import Cloudbreak from "@/mypages/Cloudbreak";
 
-import CustomMusic from "@/pages/CustomMusic";
+import CustomMusic from "@/mypages/CustomMusic";
 
 //notes
 import Note from "@/components/popups/Note";
@@ -64,11 +64,11 @@ import Passport from "@/components/popups/Passport";
 
 //controls
 import ControlPanel from "@/components/ControlPanel";
-import Info from "@/pages/Info";
+import Info from "@/mypages/Info";
 import { toggleState, setLoading } from "@/redux/controlsSlice";
 
 //sans
-import SansChat2 from "@/pages/Sans/SansChat2";
+import SansChat2 from "@/mypages/Sans/SansChat2";
 
 export default function Scene() {
 
