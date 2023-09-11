@@ -7,7 +7,7 @@ import * as THREE from 'three'
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import Logo from '@/pages/Skills/Logo'
+import Logo from '@/components/Logo'
 
 type GLTFResult = GLTF & {
   nodes: {

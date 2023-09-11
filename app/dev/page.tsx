@@ -2,7 +2,7 @@
 
 import Qhacks from "@/pages/Qhacks";
 import RiseDesk from "@/pages/RiseDesk/RiseDesk";
-import ColorSelector from "@/pages/RiseDesk/ColorSelector";
+import ColorSelector from "@/components/ColorSelector";
 import Link from "next/link";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
