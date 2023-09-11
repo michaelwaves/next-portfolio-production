@@ -36,7 +36,7 @@ export default function Utmist() {
                         <UnderLine text='University of Toronto Machine Intelligence Student Team' href={"https://utmist.gitlab.io/"} />
                         As someone with both a business and tech background, I helped them plan technical events like hackathons.
                     </p>
-                    <Image width={1000} height={1000} src="/images/utmist.jpg" alt="" width={600} height={600} className='m-auto' />
+                    <Image src="/images/utmist.jpg" alt="" width={600} height={600} className='m-auto' />
                     <h1 className="mt-10 text-5xl font-accent mx-auto">AI Hackathon</h1>
                     <p>I helped plan an AI hackathon and taught a Python Tweet Classification Workshop </p>
                 </div>
