@@ -42,7 +42,7 @@ export default function MLH() {
                             <span>Learned product development, responsive frontend design, and smart contract programming</span>
                         </Trail>
                     </div>
-                    <button onClick={() => window.open("trademint.org", "_blank")} className="tldr-button">
+                    <button onClick={() => window.open("https://www.trademint.org/", "_blank")} className="tldr-button">
                         Checkout Project
                     </button>
                 </div>
