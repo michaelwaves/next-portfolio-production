@@ -41,7 +41,7 @@ export default function Info() {
         /* if (controlsState.musicRef) {
             controlsState.musicRef.play()
         } */
-        if (withMusic) {
+        if (!withMusic) {
             dispatch(toggleState("musicRef"))
         }
     }
