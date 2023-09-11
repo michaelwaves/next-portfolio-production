@@ -3,9 +3,9 @@ import Trail from '@/components/Trails'
 import { useState } from 'react'
 import { useAppDispatch } from '@/redux/hooks'
 import { toggleState } from '@/redux/deskSlice'
-import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
+import Image from 'next/image'
 
 export default function PrintingClub() {
 
@@ -30,7 +30,7 @@ export default function PrintingClub() {
                 <div className='header-bg'></div>
             </div>
             <div className="tldr-box">
-                <img src="/images/printer.jpg" alt="3D printer on a movable trolley" className="object-cover md:w-1/2 w-full" />
+                <Image width={1000} height={1000} src="/images/printer.jpg" alt="3D printer on a movable trolley" className="object-cover md:w-1/2 w-full" />
                 <div className="flex flex-col space-y-4 items-center justify-center p-12 md:w-1/2">
                     <h2 className="tldr" onClick={() => setOpen(state => !state)}>TLDR</h2>
                     <div className="list-disc" onClick={() => setOpen(!open)}>
@@ -53,7 +53,7 @@ export default function PrintingClub() {
                     <p>
                         At Uoft, only engineering students are allowed to use the 3D printers. I wanted to bring the magic of 3D printing to Arts and Science students at Trinity, so I started a 3D printing club.
                     </p>
-                    <img src="/images/3dprint.jpg" alt="3D printer" />
+                    <Image width={1000} height={1000} src="/images/3dprint.jpg" alt="3D printer" />
                     <h2 className="mt-10">Funding and Setup</h2>
                     <ul className="list-disc list-inside">
                         <li>I drafted a mandate and budget and passed it through the student Governing Council </li>
@@ -62,10 +62,10 @@ export default function PrintingClub() {
                     </ul>
                     <h2 className="mt-10">Events</h2>
                     <p>We ran weekly events teaching people how to 3D model in Blender, slice models in PrusaSlicer, and print their models.</p>
-                    <img src="/images/blender.jpg" alt="" />
+                    <Image width={1000} height={1000} src="/images/blender.jpg" alt="" />
                     <p>We also made some magnetic pins</p>
-                    <img src="/images/uoftears.jpg" alt="" />
-                    <img src="/images/hmh1.jpg" alt="" />
+                    <Image width={1000} height={1000} src="/images/uoftears.jpg" alt="uoft tears white pin on blue uoft hoodie" />
+                    <Image width={1000} height={1000} src="/images/hmh1.jpg" alt="White home sweet home robarts pin" />
 
                 </div>
             </div>

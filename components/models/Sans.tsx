@@ -7,7 +7,6 @@ import * as THREE from 'three'
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import { useFrame } from '@react-three/fiber'
 import { useAppDispatch } from '@/redux/hooks'
 import { toggleState } from '@/redux/closetSlice'
 
@@ -53,16 +52,16 @@ export function Sans(props: JSX.IntrinsicElements['group']) {
       }
     }); */
 
-    const handleClick = (e:any)=>{
-      e.stopPropagation()
-      dispatch(toggleState('sansChat'))
-    }
+  const handleClick = (e: any) => {
+    e.stopPropagation()
+    dispatch(toggleState('sansChat'))
+  }
 
   useEffect(() => {
     actions['idle_sans']?.play()
   }, [actions])
   return (
-    <group ref={group} {...props} dispose={null} onClick={(e)=>handleClick(e)}>
+    <group ref={group} {...props} dispose={null} onClick={(e) => handleClick(e)}>
       <group name="Scene" >
         <group name="Armature" position={[-3.62, 0.91, -0.12]} scale={0.43}>
           <group name="Bone" position={[0, 0.02, 0.04]}>

@@ -10,7 +10,7 @@ export default function Laptop() {
             </h1>
             <div className="flex flex-row justify-around items-center">
                 <p className="text-xl">
-                    Here's how I built this place. 
+                    Here&#39;s how I built this place.
                 </p>
                 <button onClick={() => window.open("https://github.com/michaelwaves/next-portfolio", "_blank")} className="tldr-button">
                     Checkout Code

@@ -1,7 +1,6 @@
 'use client'
 
 import { useChat } from 'ai/react'
-import { SANS_PROMPT } from '@/data/AIData'
 import PopupCloset from '@/components/popups/PopupCloset'
 import { useAppSelector } from '@/redux/hooks'
 import { useAppDispatch } from '@/redux/hooks'
@@ -17,22 +16,10 @@ export default function SansChat() {
     initialMessages:
       initialMessages
   })
-  function convertCreatedAtToString(messages: any[]) {
-    return messages.map((message: any) => {
-      try {
-        const createdAt = new Date(message.createdAt);
-        const time = createdAt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        const date = createdAt.toLocaleDateString([], { month: 'short', day: '2-digit', year: 'numeric' });
-        const formattedCreatedAt = `${time} ${date}`;
-        return { ...message, createdAt: formattedCreatedAt };
-      } catch (error) {
-        console.log(error)
-      }
-    });
-  }
+
   useEffect(() => {
     dispatch(setInitialMessages(messages))
-  }, [messages])
+  }, [messages, dispatch])
 
   return (
     <PopupCloset reduxProperty='sansChat' >

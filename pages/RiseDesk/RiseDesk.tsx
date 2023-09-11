@@ -1,6 +1,6 @@
 "use client"
 import Trail from '@/components/Trails'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { toggleState } from '@/redux/deskSlice'
 import UnderLine from '@/components/UnderLine'
@@ -10,6 +10,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { myExit } from '@/utils/FramerMotionAnimations'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function RiseDesk() {
 
@@ -92,7 +93,7 @@ export default function RiseDesk() {
                         <UnderLine text='hardware startup accelerator' href='https://www.venturelab.ca/' />
                         . Although we eventually sunset the project, it was a great learning experience.
                     </p>
-                    <img src="/images/risehealth.png" alt="" />
+                    <Image width={1000} height={1000} src="/images/risehealth.png" alt="futuristic chair on blue plartform of rotating gears, rish health in white font" />
 
 
                 </div>

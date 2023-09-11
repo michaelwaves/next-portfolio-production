@@ -6,6 +6,7 @@ import { toggleState } from '@/redux/closetSlice'
 import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
+import Image from 'next/image'
 
 export default function Tailor() {
 
@@ -30,7 +31,7 @@ export default function Tailor() {
                 <div className='header-bg'></div>
             </div>
             <div className="tldr-box">
-                <img src="/images/tailor/tailor2.jpg" alt="michael and the mayor of kingston and two friends in front of shiny Q H 2023 balloons" className="object-cover md:w-1/2 w-full" />
+                <Image width={1000} height={1000} src="/images/tailor/tailor2.jpg" alt="Tailor main interface" className="object-cover md:w-1/2 w-full" />
                 <div className="flex flex-col space-y-4 items-center justify-center p-12 md:w-1/2">
                     <h2 className="tldr" onClick={() => setOpen(state => !state)}>TLDR</h2>
                     <div className="list-disc" onClick={() => setOpen(!open)}>
@@ -55,7 +56,7 @@ export default function Tailor() {
                         We built a website where users input words and styles and receive a custom Dalle prompt, that we submit to the API.
                         Users can then save the image or have it sent to their phone number.
                     </p>
-                    <img src="/images/tailor/tailor3.jpg" alt="" />
+                    <Image width={1000} height={1000} src="/images/tailor/tailor3.jpg" alt="woman with dog image generated, light blue background" />
                     <h2 className="mt-10">How it Works</h2>
                     <ul className="list-disc list-inside">
                         <li>First, the user inputs words as prompts</li>
@@ -63,7 +64,7 @@ export default function Tailor() {
                             <UnderLine text='Dalle API' href='https://openai.com/blog/dall-e-api-now-available-in-public-beta' />
                             to create images</li>
                         <li>We used  tailwindcss for styling</li>
-                        <li>The output image was sent to the user's phone using <UnderLine text='Twilio' href="https://www.twilio.com/en-us" /></li>
+                        <li>The output image was sent to the user&#39;s phone using <UnderLine text='Twilio' href="https://www.twilio.com/en-us" /></li>
 
                     </ul>
                     <h2 className="mt-10">Technologies Used</h2>

@@ -6,6 +6,7 @@ import { toggleState } from '@/redux/closetSlice'
 import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
+import Image from 'next/image'
 
 export default function CoverMeGPT() {
 
@@ -30,7 +31,7 @@ export default function CoverMeGPT() {
                 <div className='header-bg'></div>
             </div>
             <div className="tldr-box">
-                <img src="/images/covermegpt/landingdark.png" alt="michael and the mayor of kingston and two friends in front of shiny Q H 2023 balloons" className="object-cover md:w-1/2 w-full" />
+                <Image width={1000} height={1000} src="/images/covermegpt/landingdark.png" alt="dark mode landing page" className="object-cover md:w-1/2 w-full" />
                 <div className="flex flex-col space-y-4 items-center justify-center p-12 md:w-1/2">
                     <h2 className="tldr" onClick={() => setOpen(state => !state)}>TLDR</h2>
                     <div className="list-disc" onClick={() => setOpen(!open)}>
@@ -55,7 +56,7 @@ export default function CoverMeGPT() {
                         Why not have AI do it for you? We built a custom website in React, and used the OpenAI API to generate cover letters based on your resume and the job description.
                         We also used firebase to store user data and authentication, and you can save multiple profiles to group related experiences.
                     </p>
-                    <img src="/images/covermegpt/profile.png" alt="" />
+                    <Image width={1000} height={1000} src="/images/covermegpt/profile.png" alt="profile page" />
                     <h2 className="mt-10">How it Works</h2>
                     <ul className="list-disc list-inside">
                         <li>First, create a profile</li>

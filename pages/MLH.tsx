@@ -6,6 +6,7 @@ import { toggleState } from '@/redux/deskSlice'
 import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
+import Image from 'next/image'
 
 export default function MLH() {
 
@@ -31,7 +32,7 @@ export default function MLH() {
                 <div className='header-bg'></div>
             </div>
             <div className="tldr-box">
-                <img src="/images/trademint/upload.png" alt="profile upload page" className="object-cover md:w-1/2 w-full" />
+                <Image width={1000} height={1000} src="/images/trademint/upload.png" alt="profile upload page" className="object-cover md:w-1/2 w-full" />
                 <div className="flex flex-col space-y-4 items-center justify-center p-12 md:w-1/2">
                     <h2 className="tldr" onClick={() => setOpen(state => !state)}>TLDR</h2>
                     <div className="list-disc" onClick={() => setOpen(!open)}>
@@ -59,11 +60,11 @@ export default function MLH() {
                         <UnderLine text="NEAR" href="https://near.foundation/" />
                         Foundation.
                     </p>
-                    <img src="/images/mlh2.png" alt="" />
+                    <Image width={1000} height={1000} src="/images/mlh2.png" alt="some files from the drive" />
                     <h2 className="mt-10">Technical Skills</h2>
                     <p>I built the entire frontend and Web2 backend of the marketplace using React, TypeScript, and Firebase.Most Web3 decentralized apps are either partially on Web2 or duplicate their data in traditional databases. This is to provide a fast user experience, while still enjoying the benefits of blockchain. I also learned how to build an
                         <UnderLine text="NFT Marketplace" href="https://docs.near.org/tutorials/nfts/js/introduction" />
-                        with minting and transferring features, adhering to the <UnderLine text="Ethereum ERC-721 Standard" href="https://eips.ethereum.org/EIPS/eip-721"/>. </p>
+                        with minting and transferring features, adhering to the <UnderLine text="Ethereum ERC-721 Standard" href="https://eips.ethereum.org/EIPS/eip-721" />. </p>
                     <h2 className="mt-10">Business Skills</h2>
                     <p>
                         Through office hours with the NEAR team, I learned about SWOT analysis, go-to-market plans, product roadmaps, and minimum viable products. I created user flow diagrams, design systems, and prototypes in

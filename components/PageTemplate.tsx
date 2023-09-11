@@ -1,17 +1,16 @@
 "use client"
-import { useState } from 'react'
 import { useAppDispatch } from '@/redux/hooks'
 import { toggleState } from '@/redux/closetSlice'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
 
-interface PageTemplateProps{
+interface PageTemplateProps {
     title: string
     reduxProperty: string
     children: React.ReactNode
 }
 
-export default function PageTemplate({title, reduxProperty, children}:PageTemplateProps) {
+export default function PageTemplate({ title, reduxProperty, children }: PageTemplateProps) {
 
     const dispatch = useAppDispatch()
 

@@ -11,7 +11,6 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTFResult } from './RoomTypes'
 import { useSpring, animated } from '@react-spring/three'
 import { Curtains } from '../Curtains'
-import InsetButton from '@/components/InsetButton'
 
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { toggleState } from '@/redux/closetSlice'

@@ -1,10 +1,9 @@
-import { handleLights } from "@/redux/controlsSlice";
+
 import { useAppDispatch } from "@/redux/hooks";
 import { useAppSelector } from "@/redux/hooks";
-import {BsMusicNote} from 'react-icons/bs'
-import {FaVolumeMute} from 'react-icons/fa'
-import { motion, useCycle } from "framer-motion";
-import { FiSettings } from "react-icons/fi"
+import { BsMusicNote } from 'react-icons/bs'
+import { FaVolumeMute } from 'react-icons/fa'
+import { motion } from "framer-motion";
 import { AiOutlineInfoCircle } from "react-icons/ai"
 import { toggleState } from "@/redux/controlsSlice";
 import Image from "next/image";
@@ -34,7 +33,7 @@ const sidebar = {
 export default function Info() {
 
     const [isOpen, toggleOpen] = useState(true)
-    const [withMusic, toggleMusic] = useState(false)
+    const [withMusic, toggleMusic] = useState(true)
     const dispatch = useAppDispatch()
     const controlsState = useAppSelector((state) => state.controls)
     const handleStart = () => {
@@ -42,8 +41,8 @@ export default function Info() {
         /* if (controlsState.musicRef) {
             controlsState.musicRef.play()
         } */
-        if(withMusic){
-        dispatch(toggleState("musicRef"))
+        if (withMusic) {
+            dispatch(toggleState("musicRef"))
         }
     }
 
@@ -63,7 +62,7 @@ export default function Info() {
                         } className="w-12 h-12">
                             <AiOutlineInfoCircle className=" w-12 h-12 z-20 hover:text-s-3 hover:dark:text-p-3 " />
                         </motion.button>
-                        <h1 className='w-full md:text-5xl text-2xl title ml-4'>Michael's Room</h1>
+                        <h1 className='w-full md:text-5xl text-2xl title ml-4'>Michael&#39;s Room</h1>
                     </div>
                     <div className='w-1/3 flex justify-end z-30 ' onClick={() => toggleOpen(false)}>
                         <svg
@@ -76,7 +75,7 @@ export default function Info() {
                 </div>
                 <div className='relative w-full h-full flex flex-col mt-40 gap-4 md:gap-8'>
                     <p className="md:text-2xl text-lg">
-                        Hi there. I'm Michael, software engineer and 3D artist.
+                        Hi there. I&#39;m Michael, software engineer and 3D artist.
                         Welcome to my corner of the internet :&#41;
                     </p>
                     <div className="flex md:flex-row flex-col items-center gap-4 w-full justify-center">
@@ -94,24 +93,24 @@ export default function Info() {
                         </div>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                    <h2>Music?</h2>
-                    <div
-                        onClick={() => toggleMusic(!withMusic)}
-                        className={`w-16 h-10 flex rounded-full p-2 cursor-pointer ${!withMusic ? "justify-start bg-p-3" : "justify-end bg-s-3"} items-center`}>
-                        <motion.button
-                            layout
-                            transition={{
-                                type: "spring",
-                                stiffness: 700,
-                                damping: 30
-                            }}
-                            className="w-8 h-8 rounded-full bg-white dark:bg-black flex items-center justify-center" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                            {withMusic ? 
-                           <BsMusicNote className="w-6 h-6"/>:
-                                <FaVolumeMute className="w-6 h-6" />}
+                        <h2>Music?</h2>
+                        <div
+                            onClick={() => toggleMusic(!withMusic)}
+                            className={`w-16 h-10 flex rounded-full p-2 cursor-pointer ${!withMusic ? "justify-start bg-p-3" : "justify-end bg-s-3"} items-center`}>
+                            <motion.button
+                                layout
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 700,
+                                    damping: 30
+                                }}
+                                className="w-8 h-8 rounded-full bg-white dark:bg-black flex items-center justify-center" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                                {withMusic ?
+                                    <BsMusicNote className="w-6 h-6" /> :
+                                    <FaVolumeMute className="w-6 h-6" />}
 
-                        </motion.button>
-                    </div>
+                            </motion.button>
+                        </div>
                     </div>
                     {controlsState.loading ? <Loading /> :
                         <div className={`font-heading relative w-fit h-fit overflow-hidden pb-2 rounded-xl mx-auto`}>
@@ -120,7 +119,7 @@ export default function Info() {
                                 className={`text-white hover:translate-y-2 transition-all duration-75 bg-s-3 rounded-xl p-4 active:bg-s-5 active:translate-y-4
                                 dark:bg-p-3 dark:active:bg-p-5
                                 `}>
-                                <h1>Let's Go!</h1>
+                                <h1>Let&#39;s Go!</h1>
                             </button>
                             <div className={`bg-s-1 dark:bg-p-1 absolute top-0 left-0 rounded-xl mt-2 w-full h-full -z-10`} />
                         </div>}

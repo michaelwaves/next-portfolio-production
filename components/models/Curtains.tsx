@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.1.4 -t curtains.glb
 */
 
 import * as THREE from 'three'
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { useSpring, animated } from '@react-spring/three'

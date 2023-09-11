@@ -6,6 +6,7 @@ import { toggleState } from '@/redux/deskSlice'
 import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
+import Image from 'next/image'
 
 export default function WelcomeDesk() {
 
@@ -29,7 +30,7 @@ export default function WelcomeDesk() {
                 <div className='header-bg'></div>
             </div>
             <div className="tldr-box">
-                <img src="/images/welcomedesk2.jpg" alt="welcome desk" className="object-cover md:w-1/2 w-full" />
+                <Image width={1000} height={1000} src="/images/welcomedesk2.jpg" alt="Trinity College on a cloudy day" className="object-cover md:w-1/2 w-full" />
                 <div className="flex flex-col space-y-4 items-center justify-center p-12 md:w-1/2">
                     <h2 className="tldr" onClick={() => setOpen(state => !state)}>TLDR</h2>
                     <div className="list-disc" onClick={() => setOpen(!open)}>
@@ -61,7 +62,7 @@ export default function WelcomeDesk() {
                         <li>Answering Phones</li>
                         <li>Other Office Tasks</li>
                     </ul>
-                    <img src="/images/welcomedesk.jpg" alt="trinity college" />
+                    <Image width={1000} height={1000} src="/images/welcomedesk.jpg" alt="The welcome desk, white desk with metal light with Welcome carved into it, painting by group of seven behind the desk" />
                 </div>
             </div>
         </motion.div >

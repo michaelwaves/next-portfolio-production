@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Ref } from "react";
 import { MusicData } from "@/data/MusicData";
 
 export interface ControlsState {
@@ -54,19 +53,19 @@ export const controlsSlice = createSlice({
             state.musicIndex = action.payload
         },
         incrementMusicIndex(state) {
-            if(state.musicIndex === MusicData.length-1){
+            if (state.musicIndex === MusicData.length - 1) {
                 state.musicIndex = 0
                 return
             }
-            state.musicIndex = state.musicIndex+1
+            state.musicIndex = state.musicIndex + 1
             //state.musicIndex = state.musicIndex===MusicData.length? state.musicIndex + 1: 0
         },
         decrementMusicIndex(state) {
-            if(state.musicIndex === 0){
-                state.musicIndex = MusicData.length-1
+            if (state.musicIndex === 0) {
+                state.musicIndex = MusicData.length - 1
                 return
             }
-            state.musicIndex = state.musicIndex-1
+            state.musicIndex = state.musicIndex - 1
             //state.musicIndex = state.musicIndex===0? MusicData.length :state.musicIndex - 1 
         },
         handleLights(state) {

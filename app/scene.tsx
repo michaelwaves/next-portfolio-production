@@ -1,8 +1,6 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useSpring } from "@react-spring/three";
-import { OrbitControls, Stars, Html } from "@react-three/drei";
-import { Suspense, useEffect, useRef, useState } from "react";
-import { Vector3 } from "three";
+import { OrbitControls, Stars, } from "@react-three/drei";
+import { Suspense, useEffect } from "react";
 
 //3D models
 import { Room } from '@/components/models/room/Room';
@@ -75,17 +73,10 @@ export default function Scene() {
 
     const DisableRender = () => useFrame(() => null, 1000)
 
-    const deskState = useAppSelector((state) => state.desk)
-    const closetState = useAppSelector((state) => state.closet)
-    const controlsState = useAppSelector((state) => state.controls)
+    const deskState = useAppSelector((state: any) => state.desk)
+    const closetState = useAppSelector((state: any) => state.closet)
+    const controlsState = useAppSelector((state: any) => state.controls)
 
-    const position = controlsState.position
-    //debug
-    /* useEffect(() => {
-        console.log("deskstate.lotion", deskState.lotion)
-        console.log("deskstate.clock", deskState.clock)
-        console.log("deskState", deskState.render)
-    }, [deskState]) */
 
     //we put this in the suspense children to test if room loads
     const dispatch = useAppDispatch()
@@ -96,21 +87,6 @@ export default function Scene() {
         return null
     }
 
-    //camera with default postition
-    const positions = [
-        {
-            lookAt: [1, 2, 0],
-            position: [0, 5, 2]
-        },
-        {
-            lookAt: [-0.6, -0.79, -0.45],
-            position: [-2.9, 3, 2.9]
-        },
-        {
-            lookAt: [2, 2, 0.5],
-            position: [-2.9, 2, 2.9]
-        }
-    ]
 
     const CameraRig2 = () => {
         const { camera } = useThree()
@@ -122,32 +98,8 @@ export default function Scene() {
             }
         }, [controlsState.recenter])
 
-
-        //debug
-        /* useEffect(() => {
-            console.log(
-                "camera position",
-                camera.position.x,
-                camera.position.y,
-                camera.position.z
-            )
-            console.log(
-                "camera lookAt",
-                camera.rotation.x,
-                camera.rotation.y,
-                camera.rotation.z
-            )
-        }, [camera]) */
-
-
-
         return null
     }
-
-    useEffect(() => {
-        console.log(closetState.sansChat)
-    }, [closetState.sansChat])
-
     return (
         <main className={`relative h-full w-full bg-black ${lilitaOne.variable} ${audiowide.variable} ${indie.variable} ${stix.variable} ${vt323.variable} ${pressStart2P.variable}`}>
 
@@ -155,7 +107,6 @@ export default function Scene() {
                 <Canvas>
                     {deskState.render && <DisableRender />}
                     <OrbitControls />
-                    {/*  <CameraRig position={position} /> */}
                     <CameraRig2 />
                     <Stars />
                     <Suspense fallback={

@@ -4,6 +4,7 @@ import { toggleState } from '@/redux/deskSlice'
 import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
+import Image from 'next/image'
 
 export default function Rotman() {
 
@@ -35,7 +36,7 @@ export default function Rotman() {
                         <UnderLine text='Rotman Commerce' href={"https://rotmancommerce.utoronto.ca/"} />
                         at the University of Toronto.  With lots of hard work  &#40;and some help from IB transfer credits &#41; I graduated a year early from my four-year program.
                     </p>
-                    <img src="/images/rotman3.jpg" alt="" />
+                    <Image width={1000} height={1000} src="/images/rotman3.jpg" alt="Michael at the Rotman Commerce 2023 graduation, in front of a sign that says rc23 and balloons" />
                     <h1 className="mt-10 text-5xl font-accent mx-auto">High School</h1>
                     <p>I attended Bayview Secondary School in Richmond Hill, Canada, and graduated from the International Baccalaureate program with a 42/45. </p>
                 </div>

@@ -4,8 +4,8 @@ Command: npx gltfjsx@6.2.13 -t books.glb
 */
 
 import * as THREE from 'three'
-import React, { useRef } from 'react'
-import { Environment, RandomizedLight, useGLTF } from '@react-three/drei'
+import React from 'react'
+import { Environment, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { animated, useSpring } from '@react-spring/three'
 

@@ -8,7 +8,7 @@ export default function Clock() {
                 Clock
             </h1>
             <p className="text-xl">
-                Time flies when you have two jobs and a portfolio to build
+                Time flies when you&#39;re having fun.
             </p>
         </Popup>)
 

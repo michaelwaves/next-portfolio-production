@@ -1,11 +1,9 @@
 "use client"
-import { useState } from 'react'
 import { useAppDispatch } from '@/redux/hooks'
 import { toggleState } from '@/redux/deskSlice'
-import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
-import { useSpring, a } from '@react-spring/web'
+import Image from 'next/image'
 
 export default function PingPong() {
 
@@ -31,12 +29,12 @@ export default function PingPong() {
                 <div className='mt-20 body-bg'>
                     <h1 className="mt-10 text-5xl font-accent mx-auto">Ping Pong</h1>
                     <p>
-                        I played ping pong with my dad since I was little but I'm not very good.
-                        It's a fun sport to play with friends.
+                        I played ping pong with my dad since I was little but I&#39;m not very good.
+                        It&#39;s a fun sport to play with friends.
                     </p>
                     <div className='flex md:flex-row flex-col '>
-                        <img src="/images/pingpong.jpg" alt="" className='object-cover'/>
-                        <img src="/images/pingpong2.jpg" alt="" className=' object-cover'/>
+                        <Image width={1000} height={1000} src="/images/pingpong.jpg" alt="rory setting up ping pong net" className='object-cover' />
+                        <Image width={1000} height={1000} src="/images/pingpong2.jpg" alt="rory and marcus playing ping pong" className=' object-cover' />
                     </div>
                 </div>
             </div>

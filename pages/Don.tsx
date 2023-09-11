@@ -6,6 +6,7 @@ import { toggleState } from '@/redux/deskSlice'
 import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
+import Image from 'next/image'
 
 export default function Don() {
 
@@ -30,7 +31,7 @@ export default function Don() {
                 <div className='header-bg'></div>
             </div>
             <div className="tldr-box">
-                <img src="/images/alex.jpg" alt="michael and the mayor of kingston and two friends in front of shiny Q H 2023 balloons" className="object-cover md:w-1/2 w-full" />
+                <Image width={1000} height={1000} src="/images/ca_poster.jpg" alt="michael's ca poster" className="object-cover md:w-1/2 w-full" />
                 <div className="flex flex-col space-y-4 items-center justify-center p-12 md:w-1/2">
                     <h2 className="tldr" onClick={() => setOpen(state => !state)}>TLDR</h2>
                     <div className="list-disc" onClick={() => setOpen(!open)}>
@@ -54,7 +55,7 @@ export default function Don() {
                         I helped younger students settle into university life and supervised a floor of 15 residents.
                         I also organized events for the community, such as movie nights, game nights, and my personal favorite, cake night 😋🛖.
                     </p>
-                    <img src="/images/cakenight.jpg" alt="" />
+                    <Image width={1000} height={1000} src="/images/cakenight.jpg" alt="girl making cake on brown wooden table" />
 
                 </div>
             </div>

@@ -3,9 +3,9 @@ import Trail from '@/components/Trails'
 import { useState } from 'react'
 import { useAppDispatch } from '@/redux/hooks'
 import { toggleState } from '@/redux/deskSlice'
-import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
+import Image from 'next/image'
 
 export default function Ramuri() {
 
@@ -29,7 +29,7 @@ export default function Ramuri() {
                 <div className='header-bg'></div>
             </div>
             <div className="tldr-box">
-                <img src="/images/ramuri.png" alt="brand portal" className="object-cover md:w-1/2 w-full" />
+                <Image width={1000} height={1000} src="/images/ramuri.png" alt="brand portal" className="object-cover md:w-1/2 w-full" />
                 <div className="flex flex-col space-y-4 items-center justify-center p-12 md:w-1/2">
                     <h2 className="tldr" onClick={() => setOpen(state => !state)}>TLDR</h2>
                     <div className="list-disc" onClick={() => setOpen(!open)}>
@@ -53,7 +53,7 @@ export default function Ramuri() {
                     <p>
                         I met the founders of Ramuri at an event run by the Hatchery, a University of Toronto startup incubator. They wanted to use machine learning to promote sustainable alternatives to brands. I helped them build their frontend with React, and did webscraping with Python to populate their brand database.
                     </p>
-                    <img src="/images/ramuri2.png" alt="" />
+                    <Image width={1000} height={1000} src="/images/ramuri2.png" alt="" />
 
                 </div>
             </div>

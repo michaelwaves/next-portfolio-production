@@ -2,19 +2,11 @@
 import { useState } from 'react'
 import { useAppDispatch } from '@/redux/hooks'
 import { toggleState } from '@/redux/deskSlice'
-import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
-import { useSpring, a } from '@react-spring/web'
+import Image from 'next/image'
 
 export default function Badminton() {
-    const [badminton, setBadminton] = useState(false)
-    const { transform, opacity } = useSpring({
-        opacity: badminton ? 1 : 0,
-        transform: `perspective(600px) rotateX(${badminton ? 180 : 0}deg)`,
-        config: { mass: 5, tension: 500, friction: 80 },
-    })
-
     const dispatch = useAppDispatch()
     const handleClick = (e: any) => {
         e.stopPropagation()
@@ -39,10 +31,10 @@ export default function Badminton() {
                         I taught myself badminton by watching youtube videos and playing with better players.
                         During high school I taught kids at my community center and supervised drop ins.
                     </p>
-                    <div className='flex flex-col md:flex-row gap-4' onClick={() => { setBadminton(state => !state) }}>
-                        <img src="/images/badminton.png" alt="" className=' object-cover'/>
-                        <img src="/images/badminton2.png" alt="" className='object-cover'/>
-                           
+                    <div className='flex flex-col md:flex-row gap-4' >
+                        <Image width={1000} height={1000} src="/images/badminton.png" alt="michael playing badminton" className=' object-cover' />
+                        <Image width={1000} height={1000} src="/images/badminton2.png" alt="michael playing badminton" className='object-cover' />
+
                     </div>
 
                 </div>

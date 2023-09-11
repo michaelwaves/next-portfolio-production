@@ -6,6 +6,7 @@ import { toggleState } from '@/redux/closetSlice'
 import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
+import Image from 'next/image'
 
 export default function Qhacks() {
 
@@ -30,13 +31,13 @@ export default function Qhacks() {
                 <div className='header-bg'></div>
             </div>
             <div className="tldr-box">
-                <img src="/images/QHacksPicture.jpeg" alt="michael and the mayor of kingston and two friends in front of shiny Q H 2023 balloons" className="object-cover md:w-1/2 w-full" />
+                <Image width={1000} height={1000} src="/images/QHacksPicture.jpeg" alt="michael and the mayor of kingston and two friends in front of shiny Q H 2023 balloons" className="object-cover md:w-1/2 w-full" />
                 <div className="flex flex-col space-y-4 items-center justify-center p-12 md:w-1/2">
                     <h2 className="tldr" onClick={() => setOpen(state => !state)}>TLDR</h2>
                     <div className="list-disc" onClick={() => setOpen(!open)}>
                         <Trail open={open}>
-                            <span>Won Mayor’s Innovation Challenge</span>
-                            <span>Fine-Tuned OpenAI model trained on Kingston's Website</span>
+                            <span>Won Mayor&#39;s Innovation Challenge</span>
+                            <span>Fine-Tuned OpenAI model trained on Kingston&#39;s Website</span>
                             <span>Made new friends along the way</span>
                         </Trail>
                     </div>
@@ -55,7 +56,7 @@ export default function Qhacks() {
                         With this problem in mind, we designed and built an AI powered chatbot fine tuned on all pages from the City of Kingston Website, fittingly called Kingsley.
 
                     </p>
-                    <img src="/images/kingsley.jpg" alt="" />
+                    <Image width={1000} height={1000} src="/images/kingsley.jpg" alt="kingsley landing page" />
                     <h2 className="mt-10">How it Works</h2>
                     <ul className="list-disc list-inside">
                         <li>Kingsley uses a
@@ -64,8 +65,8 @@ export default function Qhacks() {
                         <li>The data was scraped using Beautiful Soup.</li>
                         <li>A
                             <UnderLine text='GloVe' href="https://www.kaggle.com/datasets/anindya2906/glove6b" />
-                            dataset was used to find website links relevant to the user's question.</li>
-                        <li>Jaccard similarity was used to find relevant text that specifically mentioned key words in the user's question.</li>
+                            dataset was used to find website links relevant to the user&#39;s question.</li>
+                        <li>Jaccard similarity was used to find relevant text that specifically mentioned key words in the user&#39;s question.</li>
                         <li>Relevant texts were narrowed down and passed as part of the prompt to GPT-3 for an answer completion.</li>
                         <li>The website along with the voice functionality were created using React.</li>
                     </ul>

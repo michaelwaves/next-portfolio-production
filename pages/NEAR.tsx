@@ -6,6 +6,7 @@ import { toggleState } from '@/redux/closetSlice'
 import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
+import Image from 'next/image'
 
 export default function NEAR() {
 
@@ -30,7 +31,7 @@ export default function NEAR() {
                 <div className='header-bg'></div>
             </div>
             <div className="tldr-box">
-                <img src="/images/NEAR/near2.jpg" alt="michael and the mayor of kingston and two friends in front of shiny Q H 2023 balloons" className="object-cover md:w-1/2 w-full" />
+                <Image width={1000} height={1000} src="/images/NEAR/near2.jpg" alt="homepage of patent marketplace" className="object-cover md:w-1/2 w-full" />
                 <div className="flex flex-col space-y-4 items-center justify-center p-12 md:w-1/2">
                     <h2 className="tldr" onClick={() => setOpen(state => !state)}>TLDR</h2>
                     <div className="list-disc" onClick={() => setOpen(!open)}>
@@ -54,7 +55,7 @@ export default function NEAR() {
                         Every year, an estimated $4 billion of patents or applications expire in the US. We wanted to help solve this problem by making a
                         patent marketplace based on the NEAR blockchain. This made peer to peer transactions possible, and made ownership transparent and unhackable
                     </p>
-                    <img src="/images/NEAR/near.jpg" alt="near" />
+                    <Image width={1000} height={1000} src="/images/NEAR/near.jpg" alt="near" />
                     <h2 className="mt-10">How it Works</h2>
                     <ul className="list-disc list-inside">
                         <li>NEARIP uses the
@@ -63,7 +64,7 @@ export default function NEAR() {
                         <li>We used parcel and tailwindcss for the frontend</li>
                         <li>Firebase was used to store pdfs for the patents, since on chain storage is limited.</li>
                     </ul>
-                    <img src="/images/NEAR/nearstorage.jpg" alt="near" />
+                    <Image width={1000} height={1000} src="/images/NEAR/nearstorage.jpg" alt="near" />
                     <h2 className="mt-10">Technologies Used</h2>
                     <ul className="list-disc list-inside">
                         <li>React</li>

@@ -8,7 +8,7 @@ export default function Rug() {
                 Shiba Rug
             </h1>
             <p className="text-xl">
-                A cute rug from my brother's bathroom
+                A cute rug from my brother&#39;s bathroom
             </p>
         </Popup>)
 

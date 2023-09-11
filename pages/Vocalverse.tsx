@@ -6,6 +6,7 @@ import { toggleState } from '@/redux/closetSlice'
 import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
+import Image from 'next/image'
 
 export default function Tailor() {
 
@@ -30,7 +31,7 @@ export default function Tailor() {
                 <div className='header-bg'></div>
             </div>
             <div className="tldr-box">
-                <img src="/images/vocalverse/vocalverse.png" alt="michael and the mayor of kingston and two friends in front of shiny Q H 2023 balloons" className="object-cover md:w-1/2 w-full" />
+                <Image width={1000} height={1000} src="/images/vocalverse/vocalverse.png" alt="vocalverse landing page, two women in front of galaxy of stars, anime style" className="object-cover md:w-1/2 w-full" />
                 <div className="flex flex-col space-y-4 items-center justify-center p-12 md:w-1/2">
                     <h2 className="tldr" onClick={() => setOpen(state => !state)}>TLDR</h2>
                     <div className="list-disc" onClick={() => setOpen(!open)}>
@@ -58,8 +59,8 @@ export default function Tailor() {
                         <div className='bg-s-3 w-full rounded-t-xl flex items-center justify-center'>
                             <audio src="/audio/duaportfolio.mp3" controls></audio>
                         </div>
-                        <img src="/images/vocalverse/duaportfolio.png" alt="dua sings" />
-                        <i>Dua's singing abilities could use some work</i>
+                        <Image width={1000} height={1000} src="/images/vocalverse/duaportfolio.png" alt="dua sings" />
+                        <i>Dua&#39;s singing abilities could use some work</i>
 
                     </div>
                     <h2 className="mt-10">How it Works</h2>

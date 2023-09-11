@@ -1,11 +1,9 @@
 "use client"
 import { useAppDispatch } from '@/redux/hooks'
 import { toggleState } from '@/redux/deskSlice'
-import UnderLine from '@/components/UnderLine'
 import { motion } from 'framer-motion'
 import { myExit } from '@/utils/FramerMotionAnimations'
-import { toggleState as toggleMusic} from '@/redux/controlsSlice'
-import InsetButton from '@/components/InsetButton'
+import { toggleState as toggleMusic } from '@/redux/controlsSlice'
 import { useRef } from 'react'
 
 export default function Piano() {
@@ -17,8 +15,6 @@ export default function Piano() {
         dispatch(toggleMusic('pauseMusic'));
         dispatch(toggleMusic("musicRef"))
     }
-
-    const videoRef = useRef<HTMLIFrameElement>(null)
 
     return (
         <motion.div
@@ -36,13 +32,13 @@ export default function Piano() {
             <div className='body-sides'>
                 <div className='mt-20 body-bg'>
                     <div className='flex flex-row gap-4 items-center justify-center'>
-                    <p>
-                        I can sort of play piano
-                    </p>
-                    
+                        <p>
+                            I can sort of play piano
+                        </p>
+
                     </div>
-                    <iframe  className='m-auto' width="560" height="315" src="https://www.youtube.com/embed/qvu1EQo4Apc?si=rvsV1jMPrXWj_bxv" title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                    <iframe className='m-auto' width="560" height="315" src="https://www.youtube.com/embed/qvu1EQo4Apc?si=rvsV1jMPrXWj_bxv" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                 </div>
             </div>
         </motion.div >

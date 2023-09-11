@@ -1,9 +1,7 @@
 "use client"
-import Trail from '@/components/Trails'
 import { useAppDispatch } from '@/redux/hooks'
 import { toggleState } from '@/redux/deskSlice'
-import UnderLine from '@/components/UnderLine'
-import { motion, LayoutGroup, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useSpring } from '@react-spring/three'
 import { myExit } from '@/utils/FramerMotionAnimations'
 import { BagItems } from '@/components/models/BagItems'
@@ -82,14 +80,14 @@ export default function BagPage() {
                         <Canvas>
                             <Suspense fallback={
                                 <Html className='w-full h-full flex items-center justify-center'>
-                                
-                                        <MoonLoader
-                                            size={100}
-                                            color={"#ffffff"}
-                                            loading={true} 
-                                            className='mx-auto'/>
-                
-                             
+
+                                    <MoonLoader
+                                        size={100}
+                                        color={"#ffffff"}
+                                        loading={true}
+                                        className='mx-auto' />
+
+
                                 </Html>
                             }>
                                 <BagItems rotation-y={rotation} index={index} />

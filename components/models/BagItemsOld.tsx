@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.2.13 -t bag_items.glb
 */
 
 import * as THREE from 'three'
-import React, { useRef } from 'react'
+import React from 'react'
 import { useGLTF, Environment } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { useSpring, animated } from '@react-spring/three'
@@ -58,10 +58,10 @@ export function BagItems(props: any) {
     s6: index === 5 ? 1.5 : 1,
   })
   return (
-    <animated.group rotation-y={props["rotation-y"]}  dispose={null}>
+    <animated.group rotation-y={props["rotation-y"]} dispose={null}>
       <Environment preset="forest" />
-          <ambientLight intensity={0.5} />
-          <pointLight position={[0, 0, 0]} intensity={5} color={"blue"} />
+      <ambientLight intensity={0.5} />
+      <pointLight position={[0, 0, 0]} intensity={5} color={"blue"} />
       <animated.group scale={s1} name="mosquito" rotation={[-Math.PI, Math.PI / 3, -Math.PI]}>
         <mesh geometry={nodes.Cylinder.geometry} material={materials.white} />
         <mesh geometry={nodes.Cylinder_1.geometry} material={materials.mosquito} />
@@ -72,18 +72,18 @@ export function BagItems(props: any) {
         <mesh geometry={nodes.Cylinder001.geometry} material={materials.blue} />
         <mesh geometry={nodes.Cylinder001_1.geometry} material={materials.peach} />
       </animated.group>
-      
-     <animated.group scale={s4} name="wallet" rotation={[-Math.PI, Math.PI / 3, -Math.PI / 2]} >
+
+      <animated.group scale={s4} name="wallet" rotation={[-Math.PI, Math.PI / 3, -Math.PI / 2]} >
         <mesh geometry={nodes.Cube003.geometry} material={materials.wallet} />
         <mesh geometry={nodes.Cube003_1.geometry} material={materials.brown} />
-      </animated.group> 
+      </animated.group>
       <animated.group scale={s5} name="waterbottle" >
-      <mesh geometry={nodes.waterbottle002.geometry} material={materials.blue} rotation={[0, Math.PI / 3, 0]} />
+        <mesh geometry={nodes.waterbottle002.geometry} material={materials.blue} rotation={[0, Math.PI / 3, 0]} />
 
       </animated.group>
       <animated.group scale={s6} name="passport">
-      <mesh geometry={nodes.Cube001.geometry} material={materials.passport} />
-      <mesh geometry={nodes.Cube001_1.geometry} material={materials.white} />
+        <mesh geometry={nodes.Cube001.geometry} material={materials.passport} />
+        <mesh geometry={nodes.Cube001_1.geometry} material={materials.white} />
       </animated.group>
     </animated.group>
   )
