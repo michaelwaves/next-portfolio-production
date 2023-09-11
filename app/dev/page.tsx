@@ -1,8 +1,8 @@
 "use client"
 
-import Qhacks from "@/mypages/Qhacks";
-import RiseDesk from "@/mypages/RiseDesk/RiseDesk";
-import ColorSelector from "@/mypages/RiseDesk/ColorSelector";
+import Qhacks from "@/pages/Qhacks";
+import RiseDesk from "@/pages/RiseDesk/RiseDesk";
+import ColorSelector from "@/pages/RiseDesk/ColorSelector";
 import Link from "next/link";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
