@@ -75,7 +75,7 @@ export default function Info() {
                 </div>
                 <div className='relative w-full h-full flex flex-col mt-40 gap-4 md:gap-8'>
                     <p className="md:text-2xl text-lg">
-                        Hi there. I&#39;m Michael, software engineer and 3D artist.
+                        Hi there. I&#39;m Michael, software engineer and business major.
                         Welcome to my corner of the internet :&#41;
                     </p>
                     <div className="flex md:flex-row flex-col items-center gap-4 w-full justify-center">
