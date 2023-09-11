@@ -46,6 +46,7 @@ const initialState: DeskState = {
     skills: false,
     discord: false,
     slippers: false,
+    passport: false,
     render: false,//true if any prop is true, for squishing 3D scene when page active
 
 }

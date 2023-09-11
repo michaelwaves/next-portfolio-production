@@ -9,6 +9,7 @@ import { useAppSelector, useAppDispatch } from '@/redux/hooks';
 import { Pikachu } from '@/components/models/Pikachu';
 import { Sans } from '@/components/models/Sans';
 import { Headphones } from "@/components/models/Headphones";
+import { Passport as PassportModel } from "@/components/models/Passport";
 
 
 import { AnimatePresence, motion } from "framer-motion"
@@ -59,6 +60,7 @@ import Discord from "@/components/popups/Discord";
 import Chair from "@/components/popups/Chair";
 import Blanket from "@/components/popups/Blanket";
 import Slippers from "@/components/popups/Slippers";
+import Passport from "@/components/popups/Passport";
 
 //controls
 import ControlPanel from "@/components/ControlPanel";
@@ -66,7 +68,6 @@ import Info from "@/pages/Info";
 import { toggleState, setLoading } from "@/redux/controlsSlice";
 
 //sans
-import SansChat from "@/pages/SansChat";
 import SansChat2 from "@/pages/Sans/SansChat2";
 
 export default function Scene() {
@@ -118,6 +119,7 @@ export default function Scene() {
                         {/* <Pikachu />*/}
                         <Sans />
                         <Headphones />
+                        <PassportModel position={[3, 1.29, 0.65]} scale={0.8} rotation-y={Math.PI / 2} />
                     </Suspense>
                 </Canvas>
             </div>
@@ -161,6 +163,7 @@ export default function Scene() {
                 {deskState.chair && <Chair />}
                 {deskState.blanket && <Blanket />}
                 {deskState.slippers && <Slippers />}
+                {deskState.passport && <Passport />}
 
             </AnimatePresence>
             <ControlPanel />

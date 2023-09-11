@@ -4,8 +4,8 @@ import { myExit } from "@/utils/FramerMotionAnimations"
 import { toggleState } from "@/redux/deskSlice"
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 import { getState, setMusicIndex, incrementMusicIndex, decrementMusicIndex } from "@/redux/controlsSlice"
-import {useEffect, useRef } from "react"
-import {BiSkipNext,BiSkipPrevious} from 'react-icons/bi'
+import { useEffect, useRef } from "react"
+import { BiSkipNext, BiSkipPrevious } from 'react-icons/bi'
 import InsetButton from "@/components/InsetButton"
 import { useScroll, animated } from "@react-spring/web"
 import { SkillsData } from "@/data/SkillsData"
@@ -26,9 +26,9 @@ export default function Skills() {
 
     const scrollRef = useRef<any>(null)
 
-    const lines = 40 
+    const lines = 40
     const width = 20
-    const {scrollYProgress} = useScroll({
+    const { scrollYProgress } = useScroll({
         container: scrollRef,
         default: {
             immediate: true,
@@ -36,15 +36,14 @@ export default function Skills() {
 
     })
 
-    const musicIndex = useAppSelector(state=>getState(state).musicIndex)
 
     return (
         <motion.div
             ref={scrollRef}
             exit={myExit}
             className="text-xl md:text-2xl fixed top-0 left-0 z-10 w-full h-full items-center justify-center bg-white dark:bg-black">
-           <div className='w-full h-full fixed inset-0 pointer-events-none z-0'>
-        </div>
+            <div className='w-full h-full fixed inset-0 pointer-events-none z-0'>
+            </div>
             <div className='header-top'>
                 <h1 className='title'>Skills</h1>
                 <div className='w-1/3 flex justify-end' onClick={(e) => handleClick(e)}>
@@ -54,11 +53,11 @@ export default function Skills() {
                 </div>
                 <div className='header-bg'></div>
             </div>
-            
-        <Grid/>
-   
-            
 
-        </motion.div >  
+            <Grid />
+
+
+
+        </motion.div >
     )
 }

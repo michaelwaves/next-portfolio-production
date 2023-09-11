@@ -43,7 +43,9 @@ export default function Popup({ reduxProperty, children }: { reduxProperty: stri
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </span>
-                {children}
+                <div className="flex flex-col gap-2 p-2">
+                    {children}
+                </div>
             </div>
 
         </motion.div>

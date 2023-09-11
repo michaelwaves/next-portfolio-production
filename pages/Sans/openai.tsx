@@ -3,11 +3,10 @@ import OpenAI from "openai";
 import { useReducer, useEffect, useState } from "react";
 import { RiEdit2Line } from "react-icons/ri"
 import { AiOutlineDelete } from 'react-icons/ai';
-import { reducer } from "./utils";
-import { getContext } from "./utils";
+import { reducer } from "../../utils/utils";
+import { getContext } from "../../utils/utils";
 import { SANS_PROMPT, INITIAL_SANS } from "@/data/AIData";
-import Info from "./Info";
-import { db } from "./Firebase";
+import { db } from "../../components/Firebase";
 import { setDoc, updateDoc, collection, doc } from "firebase/firestore/lite";
 
 const openai = new OpenAI({

@@ -1,5 +1,5 @@
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
-import { SkillsRotated } from './Skillsrotated'
+import { SkillsRotated } from '../../components/Skillsrotated'
 import { Vector3 } from 'three'
 import { SkillsData } from '@/data/SkillsData'
 import { useState } from 'react'
