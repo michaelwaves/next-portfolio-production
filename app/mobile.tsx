@@ -7,7 +7,8 @@ import Link from "next/link";
 import { Card } from "@/components/mobile/Card";
 import { Subtitle } from "@/components/mobile/Subtitle";
 import { SocialMedia } from "@/components/mobile/SocialMedia";
-import { AnimatedIcon } from "@/components/mobile/AnimatedIcon";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { setMobileIndex, getState } from "@/redux/controlsSlice";
 
 
 const workComponents = workExperiences.map((item, i) => (
@@ -50,7 +51,11 @@ const hobbyComponents = hobbies.map((item, i) => (
 
 
 export default function Mobile() {
-    const [index, setIndex] = useState<number>(0)
+    const index = useAppSelector(state=>getState(state).mobileIndex)
+    const dispatch = useAppDispatch()
+    const setIndex = (i: number) => {
+        dispatch(setMobileIndex(i))
+    }
     return (
         <div className="h-auto w-full">
             <div className="relative">
@@ -85,7 +90,7 @@ export default function Mobile() {
                     </ul>
                 </nav>
                 <AnimatePresence mode="wait">
-                    <div className="h-80">
+                    <div className="min-h-80 h-auto">
                         {index === 0 && workComponents}
                         {index === 1 &&
                             <div>
@@ -102,6 +107,9 @@ export default function Mobile() {
                         {index === 3 && hobbyComponents}
                     </div>
                 </AnimatePresence>
+            </div>
+            <div className="w-full flex items-center justify-center">
+                <h2>Made with 💖 and NextJS Typescript &#43; Redux</h2>
             </div>
             <motion.div className="fixed bottom-4 right-4"
                 whileTap={{ scale: 0.9 }}

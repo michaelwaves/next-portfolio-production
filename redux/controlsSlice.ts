@@ -14,6 +14,7 @@ export interface ControlsState {
     position: [number, number, number],
     firstTime: boolean,
     recenter: boolean,
+    mobileIndex: number,
     [props: string]: boolean | string | number | [number, number, number]
 }
 const initialState: ControlsState = {
@@ -33,6 +34,7 @@ const initialState: ControlsState = {
     firstTime: true,
     recenter: false,
     pauseMusic: false,
+    mobileIndex:0,
 }
 
 export const controlsSlice = createSlice({
@@ -75,10 +77,13 @@ export const controlsSlice = createSlice({
         },
         setMusicRef(state, action: PayloadAction<any>) {
             state.musicRef = action.payload
+        },
+        setMobileIndex(state, action: PayloadAction<number>) {
+            state.mobileIndex = action.payload
         }
     }
 })
-export const { toggleState, handleLights, setMusicIndex, incrementMusicIndex, decrementMusicIndex, setMusicRef, setLoading } = controlsSlice.actions
+export const { toggleState, handleLights, setMusicIndex, incrementMusicIndex, decrementMusicIndex, setMusicRef, setLoading, setMobileIndex } = controlsSlice.actions
 export const getState = (state: any) => state.controls
 
 export default controlsSlice.reducer
