@@ -12,7 +12,7 @@ export default function Laptop() {
                 <p className="text-xl">
                     Here&#39;s how I built this place.
                 </p>
-                <button onClick={() => window.open("https://github.com/michaelwaves/next-portfolio", "_blank")} className="tldr-button">
+                <button onClick={() => window.open("https://github.com/michaelwaves/next-portfolio-production", "_blank")} className="tldr-button">
                     Checkout Code
                 </button>
             </div>
