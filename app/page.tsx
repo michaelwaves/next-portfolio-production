@@ -7,9 +7,7 @@ import { MOBILE_WIDTH } from '@/data/MobileWidth';
 import { useEffect, useState } from 'react';
 export default function Page() {
 
-  const [width, setWidth] = useState<number>(window.innerWidth);
-
-
+  const [width, setWidth] = useState<number>(MOBILE_WIDTH);
   useEffect(() => {
     function handleWindowSizeChange() {
       setWidth(window.innerWidth);
