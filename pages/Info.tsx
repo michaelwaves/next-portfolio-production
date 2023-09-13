@@ -54,8 +54,8 @@ export default function Info() {
 
                 variants={sidebar}
                 animate={isOpen ? "open" : "closed"}
-                className="fixed top-0 left-0 w-full p-4 h-full flex flex-row items-center justify-center  bg-white dark:bg-black">
-                <div className='fixed top-0 left-0 w-full p-4 h-fit flex flex-row items-center justify-between bg-gradient-to-b from-white via-white dark:from-black dark:via-black'>
+                className="fixed top-0 left-0 w-full p-4 h-full overflow-y-scroll scrollbar flex flex-row items-center justify-center  bg-white dark:bg-black">
+                <div className='z-20 fixed top-0 left-0 w-full p-4 h-fit flex flex-row items-center justify-between bg-gradient-to-b from-white via-white dark:from-black dark:via-black'>
                     <div className="flex flex-row items-center justify-center">
                         <motion.button onClick={
                             () => toggleOpen(!isOpen)
@@ -79,17 +79,25 @@ export default function Info() {
                         Welcome to my corner of the internet :&#41;
                     </p>
                     <div className="flex md:flex-row flex-col items-center gap-4 w-full justify-center">
-                        <div>
-                            <Image src="/icons/left click.svg" alt="left click" width={40} height={40} className='rounded-full h-12 w-12 dark:bg-white' />
-                            <p>Left Click Drag to Orbit</p>
+                        <div className="flex items-center justify-center lg:flex-row flex-col gap-4">
+                            <div className="intro-card">
+                                <Image src="/icons/left click.svg" alt="left click" width={40} height={40} className='rounded-full h-12 w-12 dark:bg-white' />
+                                <p>Left Click Drag to Orbit</p>
+                            </div>
+                            <div className="intro-card">
+                                <Image src="/icons/right click.svg" alt="right click" width={40} height={40} className='rounded-full h-12 w-12 dark:bg-white' />
+                                <p>Right Click Drag to Pan</p>
+                            </div>
                         </div>
-                        <div>
-                            <Image src="/icons/right click.svg" alt="right click" width={40} height={40} className='rounded-full h-12 w-12 dark:bg-white' />
-                            <p>Right Click Drag to Pan</p>
-                        </div>
-                        <div>
-                            <Image src="/icons/scroll.svg" alt="right click" width={40} height={40} className='rounded-full h-12 w-12 dark:bg-white' />
-                            <p>Scroll to Zoom</p>
+                        <div className="flex items-center justify-center lg:flex-row flex-col gap-4">
+                            <div className="intro-card">
+                                <Image src="/icons/scroll.svg" alt="right click" width={40} height={40} className='rounded-full h-12 w-12 dark:bg-white' />
+                                <p>Scroll to Zoom</p>
+                            </div>
+                            <div className="intro-card">
+                                <Image src="/icons/icon.svg" alt="icon" width={40} height={40} className='rounded-full h-12 w-12 dark:bg-white' />
+                                <p>Click on objects to explore</p>
+                            </div>
                         </div>
                     </div>
                     <div className="flex flex-col items-center justify-center">
@@ -113,6 +121,7 @@ export default function Info() {
                         </div>
                     </div>
                     {controlsState.loading ? <Loading /> :
+                    <div className="h-40 mb-20">
                         <div className={`font-heading relative w-fit h-fit overflow-hidden pb-2 rounded-xl mx-auto`}>
                             <button
                                 onClick={handleStart}
@@ -122,7 +131,9 @@ export default function Info() {
                                 <h1>Let&#39;s Go!</h1>
                             </button>
                             <div className={`bg-s-1 dark:bg-p-1 absolute top-0 left-0 rounded-xl mt-2 w-full h-full -z-10`} />
-                        </div>}
+                        </div>
+                    </div>
+                        }
 
                 </div>
 

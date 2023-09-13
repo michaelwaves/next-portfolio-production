@@ -66,6 +66,9 @@
   .tldr-button{
     @apply border-2 hover:border-s-3 border-black dark:hover:border-p-3 p-4 w-40 rounded-xl text-black hover:bg-s-3 dark:hover:bg-p-3 hover:text-white active:bg-s-4 active:hover:bg-p-4;
   }
+  .intro-card{
+    @apply p-4 border-s-3 rounded-xl dark:border-p-3 w-60 h-auto flex flex-col items-center text-center gap-4 justify-center;
+  }
 }
 
 @layer utilities {

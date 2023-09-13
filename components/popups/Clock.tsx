@@ -8,7 +8,7 @@ export default function Clock() {
                 Clock
             </h1>
             <p className="text-xl">
-                How slow the hour comes, its passing speed how great
+                Slow comes the hour, its passing speed how great!
             </p>
         </Popup>)
 
