@@ -69,6 +69,24 @@
   .intro-card{
     @apply p-4 border-s-3 rounded-xl dark:border-p-3 w-60 h-auto flex flex-col items-center text-center gap-4 justify-center;
   }
+  .nav-underline{
+    @apply absolute bottom-[-1px] left-0 right-0 h-2 bg-s-3 dark:bg-p-3
+  }
+  .nav-info{
+    @apply bg-white dark:bg-black p-4 rounded-tr-xl h-20
+  }
+  .tabs{
+    @apply flex flex-grow flex-nowrap w-full items-center justify-start;
+  }
+  .nav-li{
+    @apply border-b-[1px] w-full p-4 text-center relative bg-white cursor-pointer h-6 flex justify-center items-center flex-1 min-w-0 select-none;
+  }
+  .nav-li:hover{
+    @apply bg-s-5 dark:bg-p-5;
+  }
+  .nav-li.selected{
+    @apply bg-s-5 dark:bg-p-5;
+  }
 }
 
 @layer utilities {
