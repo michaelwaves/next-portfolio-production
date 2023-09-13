@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Openai from "./Sans/openai";
 
-
 export default function Chat() {
     return (
         <div>
