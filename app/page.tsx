@@ -9,10 +9,11 @@ export default function Page() {
 
   const [width, setWidth] = useState<number>(window.innerWidth);
 
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
+
   useEffect(() => {
+    function handleWindowSizeChange() {
+      setWidth(window.innerWidth);
+    }
     window.addEventListener('resize', handleWindowSizeChange);
     return () => {
       window.removeEventListener('resize', handleWindowSizeChange);
