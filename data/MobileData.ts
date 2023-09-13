@@ -41,6 +41,7 @@ export const workExperiences = [
         title: "3D Engineer",
         company: "Rise Desk",
         date: "August 2021 - August 2022",
-        description: "Making 3D desks for an ecommerce startup"
+        description: "Making 3D desks for an ecommerce startup",
+        href: "/RiseDesk/RiseDesk",
     }
 ]

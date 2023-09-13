@@ -3,6 +3,7 @@ import Image from "next/image"
 import { workExperiences, pageCategories } from "@/data/MobileData"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const workComponents = workExperiences.map((item, i) => (
     <motion.div key={item.title} className="p-4"
@@ -13,7 +14,7 @@ const workComponents = workExperiences.map((item, i) => (
     >
         <div className="flex flex-row items-center justify-between">
             <div className="flex flex-col">
-                <p className="text-lg font-bold">{item.title}</p>
+                <Link href={item.href as string}><p className="text-lg font-bold">{item.title}</p></Link>
                 <p className="text-sm">{item.company}</p>
             </div>
             <p className="text-xs">{item.date}</p>
