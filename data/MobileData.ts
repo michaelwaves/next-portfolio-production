@@ -100,7 +100,7 @@ export const hackathons = [
         company: "MHacks 15 - 1st Place",
         date: "March 2023",
         description: "A touchless medical form input device and webiste",
-        href: "/MHacks"
+        href: "/Lumigui2"
     },
     {
         title: "Kingsley",
