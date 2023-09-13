@@ -11,7 +11,9 @@ const vt323 = VT323({ subsets: ['latin'], weight: ["400"], variable: "--font-vt3
 export default function App({ Component, pageProps }: { Component: any, pageProps: any }) {
     return (
         <Provider store={store} >
-            <Component {...pageProps} class={`${lilitaOne.variable} ${audiowide.variable} ${indie.variable} ${stix.variable} ${audiowide.className} ${vt323.variable}`} />
+            <main className={`${lilitaOne.variable} ${audiowide.variable} ${indie.variable} ${stix.variable} ${audiowide.className} ${vt323.variable}`}>
+                <Component {...pageProps} />
+            </main>
         </Provider>
     );
 }

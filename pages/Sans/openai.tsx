@@ -92,7 +92,7 @@ export default function Openai(): JSX.Element {
                     }`}
             >
                 <div className="flex flex-col gap-2 ">
-                    <p className={`text-sm font-bold ${message.role == "assistant" ? "font-pixel2" : ""}`}>{message.role == "assistant" ? "sans" : "human"}</p>
+                    <p className={`text-md font-bold ${message.role == "assistant" ? "font-pixel2" : ""}`}>{message.role == "assistant" ? "sans" : "human"}</p>
                     {state.editMode[index] ?
                         <input type="text" value={state.editInput}
                             onChange={(e) => dispatch({ type: "SET_EDIT_INPUT", payload: e.target.value })}
@@ -107,7 +107,7 @@ export default function Openai(): JSX.Element {
                                 }
                             }}
                         ></input> :
-                        <p className={`text-sm ${message.role == "assistant" ? "font-pixel" : "font-body"}`}>{message.content}</p>
+                        <p className={`text-md ${message.role == "assistant" ? "font-pixel" : "font-body"}`}>{message.content}</p>
                     }
                 </div>
                 <div className="hidden absolute group-hover:block top-2 right-2">
