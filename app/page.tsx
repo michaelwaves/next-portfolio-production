@@ -12,6 +12,7 @@ export default function Page() {
     function handleWindowSizeChange() {
       setWidth(window.innerWidth);
     }
+    handleWindowSizeChange();//execute at least once to get initial width
     window.addEventListener('resize', handleWindowSizeChange);
     return () => {
       window.removeEventListener('resize', handleWindowSizeChange);
