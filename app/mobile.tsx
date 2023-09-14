@@ -9,8 +9,7 @@ import { Card } from "@/components/mobile/Card";
 import { Subtitle } from "@/components/mobile/Subtitle";
 import { SocialMedia } from "@/components/mobile/SocialMedia";
 import Footer from "@/components/Footer"
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { setMobileIndex, getState } from "@/redux/controlsSlice";
+import About from "@/components/About"
 
 
 const workComponents = workExperiences.map((item, i) => (
@@ -55,13 +54,6 @@ const hobbyComponents = hobbies.map((item, i) => (
 export default function Mobile() {
     const [index, setIndex] = useState(0) //usestate for mobile index
 
-    //redux for mobile index
-    /* const index = useAppSelector(state=>getState(state).mobileIndex)
-    const dispatch = useAppDispatch()
-    const setIndex = (i: number) => {
-        dispatch(setMobileIndex(i))
-    } */
-
     //cookies for mobile index
     useEffect(() => {
         if (hasCookie("mobileIndex")) {
@@ -79,13 +71,7 @@ export default function Mobile() {
             </div>
             <div className='relative w-full h-full flex flex-col gap-4 md:gap-8'>
                 <div className="p-4">
-                    <p className="md:text-2xl text-lg">
-                        Hi there. I&#39;m Michael, startup and tech enthusiast passionate about AI, Web3, and biotech. I&#39;m currently interning
-                        at a clinical stage<UnderLine text="pharmaceutical startup" href="https://cloudbreakpharma.com/" />and building
-                        a<UnderLine text="blockchain patent marketplace" href="https://trademint.org" />as part of the inaugural MLH Web3 Fellowship.
-                        In my spare time I like to play badminton, cook tasty food, and build websites.
-                        Welcome to my corner of the internet :&#41;
-                    </p>
+                    <About />
                     <p className="text-md mt-4">PS&#58; This site is way more awesome on desktop 🖥️</p>
                     <p> Check it out later :&#41;</p>
                 </div>

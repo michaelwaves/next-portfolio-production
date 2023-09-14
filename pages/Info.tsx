@@ -9,6 +9,7 @@ import { toggleState } from "@/redux/controlsSlice";
 import Image from "next/image";
 import Loading from "@/components/Loading";
 import { useState } from "react";
+import About from "@/components/About";
 
 const sidebar = {
     open: (height = 1000) => ({
@@ -74,10 +75,7 @@ export default function Info() {
                     <div className='header-bg'></div>
                 </div>
                 <div className='relative w-full h-full flex flex-col mt-40 gap-4 md:gap-8'>
-                    <p className="md:text-2xl text-lg">
-                        Hi there. I&#39;m Michael, software engineer and management intern.
-                        Welcome to my corner of the internet :&#41;
-                    </p>
+                    <About />
                     <div className="flex md:flex-row flex-col items-center gap-4 w-full justify-center">
                         <div className="flex items-center justify-center lg:flex-row flex-col gap-4">
                             <div className="intro-card">
@@ -121,19 +119,19 @@ export default function Info() {
                         </div>
                     </div>
                     {controlsState.loading ? <Loading /> :
-                    <div className="h-40 mb-20">
-                        <div className={`font-heading relative w-fit h-fit overflow-hidden pb-2 rounded-xl mx-auto`}>
-                            <button
-                                onClick={handleStart}
-                                className={`text-white hover:translate-y-2 transition-all duration-75 bg-s-3 rounded-xl p-4 active:bg-s-5 active:translate-y-4
+                        <div className="h-40 mb-20">
+                            <div className={`font-heading relative w-fit h-fit overflow-hidden pb-2 rounded-xl mx-auto`}>
+                                <button
+                                    onClick={handleStart}
+                                    className={`text-white hover:translate-y-2 transition-all duration-75 bg-s-3 rounded-xl p-4 active:bg-s-5 active:translate-y-4
                                 dark:bg-p-3 dark:active:bg-p-5
                                 `}>
-                                <h1>Let&#39;s Go!</h1>
-                            </button>
-                            <div className={`bg-s-1 dark:bg-p-1 absolute top-0 left-0 rounded-xl mt-2 w-full h-full -z-10`} />
+                                    <h1>Let&#39;s Go!</h1>
+                                </button>
+                                <div className={`bg-s-1 dark:bg-p-1 absolute top-0 left-0 rounded-xl mt-2 w-full h-full -z-10`} />
+                            </div>
                         </div>
-                    </div>
-                        }
+                    }
 
                 </div>
 
