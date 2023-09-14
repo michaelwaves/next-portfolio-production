@@ -22,7 +22,7 @@ export default function Tailor() {
             exit={myExit}
             className="text-xl md:text-2xl fixed top-0 left-0 z-10 w-full h-full overflow-y-scroll items-center justify-center ">
             <div className='header-top'>
-                <h1 className='w-2/3 text-5xl'>The VocalVerse</h1>
+                <h1 className='w-2/3 text-5xl title'>The VocalVerse</h1>
                 <div className='w-1/3 flex justify-end' onClick={(e) => handleClick(e)}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="close-x">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
