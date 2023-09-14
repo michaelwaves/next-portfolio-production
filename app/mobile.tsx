@@ -1,12 +1,14 @@
 import UnderLine from "@/components/UnderLine"
 import Image from "next/image"
 import { workExperiences, pageCategories, education, extracurriculars, projects, hackathons, hobbies } from "@/data/MobileData"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { setCookie, getCookie, hasCookie, deleteCookie } from "cookies-next"
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Card } from "@/components/mobile/Card";
 import { Subtitle } from "@/components/mobile/Subtitle";
 import { SocialMedia } from "@/components/mobile/SocialMedia";
+import Footer from "@/components/Footer"
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setMobileIndex, getState } from "@/redux/controlsSlice";
 
@@ -51,11 +53,24 @@ const hobbyComponents = hobbies.map((item, i) => (
 
 
 export default function Mobile() {
-    const index = useAppSelector(state=>getState(state).mobileIndex)
+    const [index, setIndex] = useState(0) //usestate for mobile index
+
+    //redux for mobile index
+    /* const index = useAppSelector(state=>getState(state).mobileIndex)
     const dispatch = useAppDispatch()
     const setIndex = (i: number) => {
         dispatch(setMobileIndex(i))
-    }
+    } */
+
+    //cookies for mobile index
+    useEffect(() => {
+        if (hasCookie("mobileIndex")) {
+            const index = parseInt(getCookie("mobileIndex") as string)
+            setIndex(index)
+        } else {
+            setCookie("mobileIndex", "0")
+        }
+    }, [])
     return (
         <div className="h-auto w-full">
             <div className="relative">
@@ -71,6 +86,7 @@ export default function Mobile() {
                         In my spare time I like to play badminton, cook tasty food, and build websites.
                         Welcome to my corner of the internet :&#41;
                     </p>
+                    <p className="mt-2">PS&#58; This site is way cooler on desktop 🖥️</p>
                 </div>
                 <SocialMedia />
                 <nav className="nav-mobile">
@@ -79,7 +95,7 @@ export default function Mobile() {
                             <li
                                 key={item.title}
                                 className={`nav-li ${i === index ? "selected" : ""}`}
-                                onClick={() => setIndex(i)}
+                                onClick={() => { setIndex(i), setCookie("mobileIndex", i.toString()) }}
                             >
                                 {`${item.title}`}
                                 {i === index ? (
@@ -108,9 +124,7 @@ export default function Mobile() {
                     </div>
                 </AnimatePresence>
             </div>
-            <div className="w-full flex items-center justify-center">
-                <h2>Made with 💖 and NextJS Typescript &#43; Redux</h2>
-            </div>
+            <Footer />
             <motion.div className="fixed bottom-4 right-4"
                 whileTap={{ scale: 0.9 }}
             >

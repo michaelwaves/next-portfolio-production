@@ -51,7 +51,7 @@ export const education = [
         title: "Management Specialist, Minor in Economics and Finance",
         company: "University of Toronto Rotman Commerce",
         date: "September 2020 - Present",
-        description: "GPA: 3.9/4.0",
+        description: "University of Toronto Scholar Award, the Buscombe Award",
         href: "/Rotman"
     },
     {
