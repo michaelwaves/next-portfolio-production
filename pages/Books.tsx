@@ -64,7 +64,7 @@ export default function Book() {
     return (
         <motion.div
             exit={myExit}
-            className="text-xl md:text-2xl fixed top-0 left-0 z-10 w-full h-full overflow-y-scroll items-center justify-center bg-white dark:bg-black" >
+            className="text-xl md:text-2xl fixed top-0 left-0 z-10 w-full h-full overflow-y-scroll scrollbar items-center justify-center bg-white dark:bg-black" >
             <div className='header-top'>
                 <h1 className='w-2/3 text-5xl font-body title'>Cool Books</h1>
                 <div className='w-1/3 flex justify-end z-20' onClick={(e) => handleClick(e)}>
