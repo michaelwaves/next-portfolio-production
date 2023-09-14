@@ -8,7 +8,7 @@ import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { useAppDispatch } from '@/redux/hooks'
-import { toggleState } from '@/redux/closetSlice'
+import { toggleStatePopup } from '@/redux/closetSlice'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -54,7 +54,7 @@ export function Sans(props: JSX.IntrinsicElements['group']) {
 
   const handleClick = (e: any) => {
     e.stopPropagation()
-    dispatch(toggleState('sansChat'))
+    dispatch(toggleStatePopup('sansChat'))
   }
 
   useEffect(() => {
