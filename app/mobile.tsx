@@ -86,7 +86,7 @@ export default function Mobile() {
                         In my spare time I like to play badminton, cook tasty food, and build websites.
                         Welcome to my corner of the internet :&#41;
                     </p>
-                    <p className="text-md mt-4">PS&#58; This site is even more awesome on desktop 🖥️</p>
+                    <p className="text-md mt-4">PS&#58; This site is way more awesome on desktop 🖥️</p>
                     <p> Check it out later :&#41;</p>
                 </div>
                 <SocialMedia />
