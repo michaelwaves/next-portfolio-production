@@ -14,6 +14,7 @@ const initialState: ClosetState = {
     covermegpt: false,
     vocalverse: false,
     sansChat: false,
+    render: false,
     initialMessages: [{ id: "system", role: "system", content: SANS_PROMPT, createdAt: "now" }],
 }
 
@@ -24,6 +25,7 @@ export const closetSlice = createSlice({
         toggleState(state, action: PayloadAction<keyof ClosetState>) {
 
             state[action.payload] = !state[action.payload]
+            state.render = !state.render;
         },
         toggleStatePopup(state, action: PayloadAction<keyof ClosetState>) {
 

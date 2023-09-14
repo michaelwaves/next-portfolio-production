@@ -104,7 +104,7 @@ export default function Scene() {
     return (
         <main className={`relative h-full w-full bg-black ${lilitaOne.variable} ${audiowide.variable} ${indie.variable} ${stix.variable} ${vt323.variable} ${pressStart2P.variable}`}>
 
-            <div className={`${deskState.render ? "h-40" : "h-screen"}`}>
+            <div className={`${deskState.render || closetState.render ? "h-40" : "h-screen"}`}>
                 <Canvas>
                     {deskState.render && <DisableRender />}
                     <OrbitControls />
