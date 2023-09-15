@@ -8,6 +8,7 @@ import { getContext } from "../../utils/utils";
 import { SANS_PROMPT, INITIAL_SANS } from "@/data/AIData";
 import { db } from "../../components/Firebase";
 import { setDoc, updateDoc, collection, doc } from "firebase/firestore/lite";
+import { PulseLoader } from "react-spinners";
 
 const openai = new OpenAI({
     apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
@@ -81,7 +82,7 @@ export default function Openai(): JSX.Element {
         console.log(state.messages);
         dispatch({ type: "SET_LOADING", payload: true });
         dispatch({ type: "ADD_MESSAGE", payload: { role: "user", content: state.input } });
-
+        dispatch({ type: "SET_INPUT", payload: "" });
     }
 
     const messages = state.messages.map((message, index) => {
@@ -153,11 +154,12 @@ export default function Openai(): JSX.Element {
                 </div>
                 <div className="max-h-40 pr-4 overflow-y-scroll scrollbar">
                     {messages}
+                    {state.loading && <PulseLoader color="#d1d5db" size={10} className="mx-auto w-12 h-6" />}
                 </div>
                 <div id="input-box">
                     <div className="flex flex-row items-center justify-between p-4">
                         <input
-                            className="w-full mr-2 p-2 border border-gray-300 rounded-lg font-body"
+                            className="w-full mr-2 p-2 border border-gray-300 rounded-lg font-body dark:bg-gray-800"
                             type="text"
                             placeholder="Type something..."
                             value={state.input}

@@ -7,6 +7,7 @@ import { MusicData } from "@/data/MusicData";
 import { FiSettings } from "react-icons/fi"
 import { useRef, useEffect } from "react";
 import InsetButton from "./InsetButton";
+import LightSwitch from "./LightSwitch";
 
 const sidebar = {
     open: (height = 1000) => ({
@@ -76,7 +77,7 @@ export default function ControlPanel() {
                         <h1 className="md:block hidden text-lg">Recenter</h1>
                         <BiCurrentLocation className="block md:hidden" />
                     </InsetButton>
-                    <div
+                    {/* <div
                         onClick={() => dispatch(handleLights())}
                         className={`w-16 h-10 flex rounded-full p-2 cursor-pointer ${controlsState.main_lights == 1 ? "justify-start bg-p-3" : "justify-end bg-s-3"} items-center`}>
                         <motion.button
@@ -95,7 +96,8 @@ export default function ControlPanel() {
                                 </svg>}
 
                         </motion.button>
-                    </div>
+                    </div> */}
+                    <LightSwitch />
                     <audio ref={audioRef} src={MusicData[controlsState.musicIndex].filepath} controls></audio>
                 </div>
             </motion.div>

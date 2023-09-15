@@ -102,7 +102,7 @@ export default function Info() {
                         <h2>Music?</h2>
                         <div
                             onClick={() => toggleMusic(!withMusic)}
-                            className={`w-16 h-10 flex rounded-full p-2 cursor-pointer ${!withMusic ? "justify-start bg-p-3" : "justify-end bg-s-3"} items-center`}>
+                            className={`w-16 h-10 flex rounded-full p-2 cursor-pointer dark:bg-p-3 bg-s-3  ${!withMusic ? "justify-start" : "justify-end"} items-center`}>
                             <motion.button
                                 layout
                                 transition={{
