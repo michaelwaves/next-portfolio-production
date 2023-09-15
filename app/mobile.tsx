@@ -64,10 +64,10 @@ export default function Mobile() {
         }
     }, [])
     return (
-        <div className="h-auto w-full">
+        <div className="h-auto w-full dark:bg-black">
             <div className="relative">
                 <Image src="/images/room/3.png" alt="Michael's room" width={500} height={500} />
-                <div className="w-full h-20 bg-gradient-to-t from-white absolute bottom-0"></div>
+                <div className="w-full h-20 bg-gradient-to-t from-white absolute bottom-0 dark:bg-gradient-to-t dark:from-black"></div>
             </div>
             <div className='relative w-full h-full flex flex-col gap-4 md:gap-8'>
                 <div className="p-4">
@@ -76,12 +76,12 @@ export default function Mobile() {
                     <p> Check it out later :&#41;</p>
                 </div>
                 <SocialMedia />
-                <nav className="nav-mobile">
+                <nav className="nav-mobile dark:bg-black">
                     <ul className="flex flex-row">
                         {pageCategories.map((item, i) => (
                             <li
                                 key={item.title}
-                                className={`nav-li ${i === index ? "selected" : ""}`}
+                                className={`nav-li dark:bg-black ${i === index ? "selected" : ""}`}
                                 onClick={() => { setIndex(i), setCookie("mobileIndex", i.toString()) }}
                             >
                                 {`${item.title}`}
@@ -116,7 +116,7 @@ export default function Mobile() {
                 whileTap={{ scale: 0.9 }}
             >
                 <Link href="/chat">
-                    <Image src="/images/svgs/chatright.svg" width={20} height={20} alt="Click to Chat" className="w-12 h-12" />
+                    <Image src="/images/svgs/chatright.svg" width={20} height={20} alt="Click to Chat" className="w-12 h-12 dark:fill-white" />
                 </Link>
             </motion.div>
         </div>
