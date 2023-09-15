@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { motion, useMotionValue, useSpring } from "framer-motion"
 export default function CustomCursor() {
+    const WIDTH = 16
     const cursorX = useMotionValue(-100)
     const cursorY = useMotionValue(-100)
     const springConfig = { damping: 20, stiffness: 700, mass: 0.5 }
@@ -8,8 +9,8 @@ export default function CustomCursor() {
     const cursorYSpring = useSpring(cursorY, springConfig)
     useEffect(() => {
         const moveCursor = (e: any) => {
-            cursorX.set(e.clientX - 16)
-            cursorY.set(e.clientY - 16)
+            cursorX.set(e.clientX - WIDTH)
+            cursorY.set(e.clientY - WIDTH)
         }
         window.addEventListener('mousemove', moveCursor)
         return () => {
