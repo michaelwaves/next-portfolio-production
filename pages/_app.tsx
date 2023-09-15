@@ -1,5 +1,6 @@
 import store from '@/redux/store';
 import { Provider } from 'react-redux';
+import DarkMode from '@/components/DarkMode';
 import '@/app/globals.css';
 import BackButton from '@/components/mobile/BackButton';
 import { Lilita_One, Audiowide, STIX_Two_Text, Indie_Flower, VT323 } from 'next/font/google'
@@ -14,9 +15,10 @@ export default function App({ Component, pageProps }: { Component: any, pageProp
     return (
         <Provider store={store} >
             <main className={`${lilitaOne.variable} ${audiowide.variable} ${indie.variable} ${stix.variable} ${audiowide.className} ${vt323.variable}`}>
-                <BackButton />
-                <Component {...pageProps} />
-
+                <DarkMode>
+                    <BackButton />
+                    <Component {...pageProps} />
+                </DarkMode>
             </main>
         </Provider>
     );

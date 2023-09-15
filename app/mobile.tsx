@@ -12,6 +12,7 @@ import Footer from "@/components/Footer"
 import About from "@/components/About"
 import { useAppSelector } from "@/redux/hooks"
 import { getState } from "@/redux/controlsSlice"
+import CustomCursor from "@/components/CustomCursor"
 
 
 const workComponents = workExperiences.map((item, i) => (
@@ -123,6 +124,7 @@ export default function Mobile() {
                     </Link>
                 </motion.div>
                 {/* <ControlPanel /> */}
+                <CustomCursor />
             </div>
         </div>
     )
