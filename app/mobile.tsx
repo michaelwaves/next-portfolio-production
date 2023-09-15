@@ -122,7 +122,7 @@ export default function Mobile() {
                         <Image src="/images/svgs/chatright.svg" width={20} height={20} alt="Click to Chat" className="w-12 h-12 dark:fill-white" />
                     </Link>
                 </motion.div>
-                <ControlPanel />
+                {/* <ControlPanel /> */}
             </div>
         </div>
     )
