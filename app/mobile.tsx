@@ -10,6 +10,8 @@ import { Subtitle } from "@/components/mobile/Subtitle";
 import { SocialMedia } from "@/components/mobile/SocialMedia";
 import Footer from "@/components/Footer"
 import About from "@/components/About"
+import { useAppSelector } from "@/redux/hooks"
+import { getState } from "@/redux/controlsSlice"
 
 
 const workComponents = workExperiences.map((item, i) => (
@@ -53,7 +55,7 @@ const hobbyComponents = hobbies.map((item, i) => (
 
 export default function Mobile() {
     const [index, setIndex] = useState(0) //usestate for mobile index
-
+    const controlsState = useAppSelector(getState)
     //cookies for mobile index
     useEffect(() => {
         if (hasCookie("mobileIndex")) {
@@ -64,62 +66,64 @@ export default function Mobile() {
         }
     }, [])
     return (
-        <div className="h-auto w-full dark:bg-black">
-            <div className="relative">
-                <Image src="/images/room/3.png" alt="Michael's room" width={500} height={500} />
-                <div className="w-full h-20 bg-gradient-to-t from-white absolute bottom-0 dark:bg-gradient-to-t dark:from-black"></div>
-            </div>
-            <div className='relative w-full h-full flex flex-col gap-4 md:gap-8'>
-                <div className="p-4">
-                    <About />
-                    <p className="text-md mt-4">PS&#58; This site is way more awesome on desktop 🖥️</p>
-                    <p> Check it out later :&#41;</p>
+        <div className={`${controlsState.lamps == 1 ? "dark" : ""}`}>
+            <div className={`h-auto w-full dark:bg-black`}>
+                <div className="relative">
+                    <Image src="/images/room/3.png" alt="Michael's room" width={500} height={500} />
+                    <div className="w-full h-20 bg-gradient-to-t from-white absolute bottom-0 dark:bg-gradient-to-t dark:from-black"></div>
                 </div>
-                <SocialMedia />
-                <nav className="nav-mobile dark:bg-black">
-                    <ul className="flex flex-row">
-                        {pageCategories.map((item, i) => (
-                            <li
-                                key={item.title}
-                                className={`nav-li dark:bg-black ${i === index ? "selected" : ""}`}
-                                onClick={() => { setIndex(i), setCookie("mobileIndex", i.toString()) }}
-                            >
-                                {`${item.title}`}
-                                {i === index ? (
-                                    <motion.div className="nav-underline" layoutId="underline" />
-                                ) : null}
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-                <AnimatePresence mode="wait">
-                    <div className="min-h-80 h-auto">
-                        {index === 0 && workComponents}
-                        {index === 1 &&
-                            <div>
-                                {educationComponents}
-                                <Subtitle text="Extracurriculars" />
-                                {extracurricularComponents}
-                            </div>}
-                        {index === 2 &&
-                            <div>
-                                {projectComponents}
-                                <Subtitle text="Hackathons" />
-                                {hackathonComponents}
-                            </div>}
-                        {index === 3 && hobbyComponents}
+                <div className='relative w-full h-full flex flex-col gap-4 md:gap-8'>
+                    <div className="p-4">
+                        <About />
+                        <p className="text-md mt-4">PS&#58; This site is way more awesome on desktop 🖥️</p>
+                        <p> Check it out later :&#41;</p>
                     </div>
-                </AnimatePresence>
+                    <SocialMedia />
+                    <nav className="nav-mobile dark:bg-black">
+                        <ul className="flex flex-row">
+                            {pageCategories.map((item, i) => (
+                                <li
+                                    key={item.title}
+                                    className={`nav-li dark:bg-black ${i === index ? "selected" : ""}`}
+                                    onClick={() => { setIndex(i), setCookie("mobileIndex", i.toString()) }}
+                                >
+                                    {`${item.title}`}
+                                    {i === index ? (
+                                        <motion.div className="nav-underline" layoutId="underline" />
+                                    ) : null}
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                    <AnimatePresence mode="wait">
+                        <div className="min-h-80 h-auto">
+                            {index === 0 && workComponents}
+                            {index === 1 &&
+                                <div>
+                                    {educationComponents}
+                                    <Subtitle text="Extracurriculars" />
+                                    {extracurricularComponents}
+                                </div>}
+                            {index === 2 &&
+                                <div>
+                                    {projectComponents}
+                                    <Subtitle text="Hackathons" />
+                                    {hackathonComponents}
+                                </div>}
+                            {index === 3 && hobbyComponents}
+                        </div>
+                    </AnimatePresence>
+                </div>
+                <Footer />
+                <motion.div className="fixed bottom-16 right-4"
+                    whileTap={{ scale: 0.9 }}
+                >
+                    <Link href="/chat">
+                        <Image src="/images/svgs/chatright.svg" width={20} height={20} alt="Click to Chat" className="w-12 h-12 dark:fill-white" />
+                    </Link>
+                </motion.div>
+                <ControlPanel />
             </div>
-            <Footer />
-            <motion.div className="fixed bottom-16 right-4"
-                whileTap={{ scale: 0.9 }}
-            >
-                <Link href="/chat">
-                    <Image src="/images/svgs/chatright.svg" width={20} height={20} alt="Click to Chat" className="w-12 h-12 dark:fill-white" />
-                </Link>
-            </motion.div>
-            <ControlPanel />
         </div>
     )
 }

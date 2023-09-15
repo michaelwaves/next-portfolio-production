@@ -23,7 +23,7 @@ export default function Page() {
 
   return (
 
-    <Provider store={store}>
+    <Provider store={store} >
       {isMobile ? <Mobile /> : <Scene />}
     </Provider>
 

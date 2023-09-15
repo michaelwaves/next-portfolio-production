@@ -102,7 +102,7 @@ export default function Scene() {
         return null
     }
     return (
-        <main className={`relative h-full w-full bg-black ${lilitaOne.variable} ${audiowide.variable} ${indie.variable} ${stix.variable} ${vt323.variable} ${pressStart2P.variable}`}>
+        <main className={`${controlsState.lamps == 1 ? "dark" : ""} relative h-full w-full bg-black ${lilitaOne.variable} ${audiowide.variable} ${indie.variable} ${stix.variable} ${vt323.variable} ${pressStart2P.variable}`}>
 
             <div className={`${deskState.render || closetState.render ? "h-40" : "h-screen"}`}>
                 <Canvas>
