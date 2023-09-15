@@ -1,4 +1,4 @@
-import UnderLine from "@/components/UnderLine"
+import ControlPanel from "@/components/ControlPanel"
 import Image from "next/image"
 import { workExperiences, pageCategories, education, extracurriculars, projects, hackathons, hobbies } from "@/data/MobileData"
 import { useState, useEffect } from "react"
@@ -112,13 +112,14 @@ export default function Mobile() {
                 </AnimatePresence>
             </div>
             <Footer />
-            <motion.div className="fixed bottom-4 right-4"
+            <motion.div className="fixed bottom-16 right-4"
                 whileTap={{ scale: 0.9 }}
             >
                 <Link href="/chat">
                     <Image src="/images/svgs/chatright.svg" width={20} height={20} alt="Click to Chat" className="w-12 h-12 dark:fill-white" />
                 </Link>
             </motion.div>
+            <ControlPanel />
         </div>
     )
 }
