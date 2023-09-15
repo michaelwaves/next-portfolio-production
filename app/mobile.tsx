@@ -13,7 +13,7 @@ import About from "@/components/About"
 import { useAppSelector } from "@/redux/hooks"
 import { getState } from "@/redux/controlsSlice"
 import CustomCursor from "@/components/CustomCursor"
-
+import LightSwitch from "@/components/LightSwitch"
 
 const workComponents = workExperiences.map((item, i) => (
     <motion.div key={item.title} className="p-4"
@@ -80,6 +80,7 @@ export default function Mobile() {
                         <p> Check it out later :&#41;</p>
                     </div>
                     <SocialMedia />
+
                     <nav className="nav-mobile dark:bg-black">
                         <ul className="flex flex-row">
                             {pageCategories.map((item, i) => (
@@ -123,6 +124,7 @@ export default function Mobile() {
                         <Image src="/images/svgs/chatright.svg" width={20} height={20} alt="Click to Chat" className="w-12 h-12 dark:fill-white" />
                     </Link>
                 </motion.div>
+
                 {/* <ControlPanel /> */}
                 {/*  <CustomCursor /> */}
             </div>

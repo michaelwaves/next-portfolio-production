@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { FiMail } from "react-icons/fi"
+import LightSwitch from "./LightSwitch"
 
 
 export default function Footer() {
@@ -10,6 +11,9 @@ export default function Footer() {
                 <FiMail />
                 <p>michaelyu713705@gmail.com</p>
             </motion.a>
+            <div className="">
+                <LightSwitch />
+            </div>
         </div>
     )
 }
