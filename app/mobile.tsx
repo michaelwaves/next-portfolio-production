@@ -124,7 +124,7 @@ export default function Mobile() {
                     </Link>
                 </motion.div>
                 {/* <ControlPanel /> */}
-                <CustomCursor />
+                {/*  <CustomCursor /> */}
             </div>
         </div>
     )
