@@ -534,7 +534,7 @@ export function Room(props: JSX.IntrinsicElements['group']) {
           <mesh name="Cube081_1" geometry={nodes.Cube081_1.geometry} material={materials['gray.005']} />
           <mesh name="Cube081_2" geometry={nodes.Cube081_2.geometry} material={materials['orange.003']} />
         </group>
-        <group name="backpack004" onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleClosetPopup("domainbag2")) }}>
+        <group name="backpack004" onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleClosetPopup("domainbag3")) }}>
           <mesh name="Cube082" geometry={nodes.Cube082.geometry} material={materials['gray.003']} />
           <mesh name="Cube082_1" geometry={nodes.Cube082_1.geometry} material={materials['gray.005']} />
           <mesh name="Cube082_2" geometry={nodes.Cube082_2.geometry} material={materials['orange.003']} />
