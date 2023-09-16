@@ -285,7 +285,9 @@ export function Room(props: JSX.IntrinsicElements['group']) {
         <mesh name="curtain_top" geometry={nodes.curtain_top.geometry} material={materials.gray} />
         {/*   <animated.mesh onClick={(e) => handleClick(e)} scale-z={curtain_l} name="curtain_l" geometry={nodes.curtain_l.geometry} material={materials.hotel_sheet} /> */}
         <Curtains />
-        <mesh name="pillow" geometry={nodes.pillow.geometry} material={materials['gray.001']} />
+        <mesh name="pillow" geometry={nodes.pillow.geometry} material={materials['gray.001']}
+          onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleStatePopup("pillow")) }}
+        />
         <mesh name="mattress" geometry={nodes.mattress.geometry} material={materials.gray} />
         <group name="laptop_screen"
           onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleStatePopup("laptop")) }}

@@ -61,6 +61,7 @@ import Chair from "@/components/popups/Chair";
 import Blanket from "@/components/popups/Blanket";
 import Slippers from "@/components/popups/Slippers";
 import Passport from "@/components/popups/Passport";
+import ThePillow from "@/components/popups/ThePillow";
 
 //controls
 import ControlPanel from "@/components/ControlPanel";
@@ -164,6 +165,7 @@ export default function Scene() {
                 {deskState.blanket && <Blanket />}
                 {deskState.slippers && <Slippers />}
                 {deskState.passport && <Passport />}
+                {deskState.pillow && <ThePillow />}
 
             </AnimatePresence>
             <ControlPanel />
