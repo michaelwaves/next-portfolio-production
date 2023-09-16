@@ -63,6 +63,16 @@ import Slippers from "@/components/popups/Slippers";
 import Passport from "@/components/popups/Passport";
 import ThePillow from "@/components/popups/ThePillow";
 
+//closet notes
+import RedShirt from "@/components/popups/RedShirt";
+import MLHShirt from "@/components/popups/MLHShirt";
+import DressShirt from "@/components/popups/DressShirt";
+import Pants from "@/components/popups/Pants";
+import Shorts from "@/components/popups/Shorts";
+import DomainBag1 from "@/components/popups/DomainBag1";
+import DomainBag2 from "@/components/popups/DomainBag2";
+import DomainBag3 from "@/components/popups/DomainBag3";
+
 //controls
 import ControlPanel from "@/components/ControlPanel";
 import Info from "@/pages/Info";
@@ -146,7 +156,15 @@ export default function Scene() {
                 {closetState.vocalverse && <Vocalverse />}
                 {closetState.covermegpt && <CoverMeGPT />}
 
-                {closetState.sansChat && <SansChat2 />}
+                {closetState.sansChat && <SansChat2 key="sans chat" />}
+                {closetState.redShirt && <RedShirt key="red shirt" />}
+                {closetState.mlhShirt && <MLHShirt key="MLH shirt" />}
+                {closetState.dressShirt && <DressShirt key="dress shirt" />}
+                {closetState.pants && <Pants />}
+                {closetState.shorts && <Shorts />}
+                {closetState.domainbag1 && <DomainBag1 />}
+                {closetState.domainbag2 && <DomainBag2 />}
+                {closetState.domainbag3 && <DomainBag3 />}
 
                 {deskState.book && <Book />}
                 {deskState.bag && <BagPage />}

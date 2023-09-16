@@ -152,7 +152,7 @@ export default function Openai(): JSX.Element {
                     <h1 className="title text-xl w-full">The Skeleton in my Closet</h1>
                     {/*  <Info /> */}
                 </div>
-                <div className="max-h-40 pr-4 overflow-y-scroll scrollbar">
+                <div className="max-h-80 pr-4 overflow-y-scroll scrollbar">
                     {messages}
                     {state.loading && <PulseLoader color="#d1d5db" size={10} className="mx-auto w-12 h-6" />}
                 </div>

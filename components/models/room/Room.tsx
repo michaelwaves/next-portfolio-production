@@ -13,7 +13,7 @@ import { useSpring, animated } from '@react-spring/three'
 import { Curtains } from '../Curtains'
 
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
-import { toggleState } from '@/redux/closetSlice'
+import { toggleState, toggleStatePopup as toggleClosetPopup } from '@/redux/closetSlice'
 import { toggleState as toggleDesk, toggleStatePopup, getState } from '@/redux/deskSlice'
 import { handleLights as reduxLights, toggleState as toggleControls } from '@/redux/controlsSlice'
 import { useFrame } from '@react-three/fiber'
@@ -524,17 +524,17 @@ export function Room(props: JSX.IntrinsicElements['group']) {
           onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleStatePopup("michael20")) }}
         />
         <mesh name="drawer_case" geometry={nodes.drawer_case.geometry} material={materials['gray.001']} />
-        <group name="backpack002">
+        <group name="backpack002" onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleClosetPopup("domainbag1")) }}>
           <mesh name="Cube080" geometry={nodes.Cube080.geometry} material={materials['gray.003']} />
           <mesh name="Cube080_1" geometry={nodes.Cube080_1.geometry} material={materials['gray.005']} />
           <mesh name="Cube080_2" geometry={nodes.Cube080_2.geometry} material={materials['orange.003']} />
         </group>
-        <group name="backpack003">
+        <group name="backpack003" onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleClosetPopup("domainbag2")) }}>
           <mesh name="Cube081" geometry={nodes.Cube081.geometry} material={materials['gray.003']} />
           <mesh name="Cube081_1" geometry={nodes.Cube081_1.geometry} material={materials['gray.005']} />
           <mesh name="Cube081_2" geometry={nodes.Cube081_2.geometry} material={materials['orange.003']} />
         </group>
-        <group name="backpack004">
+        <group name="backpack004" onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleClosetPopup("domainbag2")) }}>
           <mesh name="Cube082" geometry={nodes.Cube082.geometry} material={materials['gray.003']} />
           <mesh name="Cube082_1" geometry={nodes.Cube082_1.geometry} material={materials['gray.005']} />
           <mesh name="Cube082_2" geometry={nodes.Cube082_2.geometry} material={materials['orange.003']} />
@@ -564,19 +564,29 @@ export function Room(props: JSX.IntrinsicElements['group']) {
           onPointerLeave={() => setGithub(false)}
           onClick={() => window.open("https://github.com/michaelwaves", "_blank")}
         />
-        <mesh name="mlh_shirt" geometry={nodes.mlh_shirt.geometry} material={materials.clothes}>
+        <mesh name="mlh_shirt" geometry={nodes.mlh_shirt.geometry} material={materials.clothes}
+          onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleClosetPopup("mlhShirt")) }}
+        >
           <mesh name="hangar002" geometry={nodes.hangar002.geometry} material={materials['gray.004']} />
         </mesh>
-        <mesh name="arts_shirt" geometry={nodes.arts_shirt.geometry} material={materials.clothes}>
+        <mesh name="arts_shirt" geometry={nodes.arts_shirt.geometry} material={materials.clothes}
+          onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleClosetPopup("redShirt")) }}
+        >
           <mesh name="hangar001" geometry={nodes.hangar001.geometry} material={materials['gray.004']} />
         </mesh>
-        <mesh name="dress_shirt" geometry={nodes.dress_shirt.geometry} material={materials.clothes}>
+        <mesh name="dress_shirt" geometry={nodes.dress_shirt.geometry} material={materials.clothes}
+          onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleClosetPopup("dressShirt")) }}
+        >
           <mesh name="hangar" geometry={nodes.hangar.geometry} material={materials['gray.004']} />
         </mesh>
-        <mesh name="pants" geometry={nodes.pants.geometry} material={materials.clothes}>
+        <mesh name="pants" geometry={nodes.pants.geometry} material={materials.clothes}
+          onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleClosetPopup("pants")) }}
+        >
           <mesh name="hangar004" geometry={nodes.hangar004.geometry} material={materials['gray.004']} />
         </mesh>
-        <mesh name="shorts" geometry={nodes.shorts.geometry} material={materials.clothes}>
+        <mesh name="shorts" geometry={nodes.shorts.geometry} material={materials.clothes}
+          onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleClosetPopup("shorts")) }}
+        >
           <mesh name="hangar003" geometry={nodes.hangar003.geometry} material={materials['gray.004']} />
         </mesh>
         <group name="slipper" onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleStatePopup("slippers")) }}>

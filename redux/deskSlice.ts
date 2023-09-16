@@ -63,6 +63,12 @@ export const deskSlice = createSlice({
         },
         toggleStatePopup(state, action: PayloadAction<keyof DeskState>) {
             state[action.payload] = !state[action.payload];
+            //reset all other popups to false except for the one that was toggled and initialMessages and render
+            Object.keys(state).forEach((key) => {
+                if (key !== action.payload && typeof state[key] === 'boolean') {
+                    state[key] = false;
+                }
+            });
         }
         ,
         changeDeskColor(state, action: PayloadAction<string>) {
