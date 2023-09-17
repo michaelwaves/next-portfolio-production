@@ -13,7 +13,8 @@ import About from "@/components/About"
 import { useAppSelector, useAppDispatch } from "@/redux/hooks"
 import { getState, setIsDark } from "@/redux/controlsSlice"
 import CustomCursor from "@/components/CustomCursor"
-import { useEffectOnce } from "react-use"
+import { MoonLoader } from "react-spinners"
+
 
 const workComponents = workExperiences.map((item, i) => (
     <motion.div key={item.title} className="p-4"
@@ -54,8 +55,9 @@ const hobbyComponents = hobbies.map((item, i) => (
 ))
 
 
-export default function Mobile() {
+export default function Mobile({}) {
     const [index, setIndex] = useState(0) //usestate for mobile index
+    const [isDark, setIsDark] = useState<boolean|null>(null)
     const controlsState = useAppSelector(getState)
     const dispatch = useAppDispatch()
     //cookies for mobile index
@@ -74,11 +76,13 @@ export default function Mobile() {
         } else {
             document.documentElement.classList.remove("dark")
         }
+        setIsDark(getCookie("isDark") === "true")
     }, [controlsState.isDark])
 
 
     return (
         <div className="">
+            {isDark!=null?
             <div className={`h-auto w-full dark:bg-black`}>
                 <div className="relative">
                     <Image src="/images/room/3.png" alt="Michael's room" width={500} height={500} />
@@ -136,9 +140,13 @@ export default function Mobile() {
                     </Link>
                 </motion.div>
 
-                {/* <ControlPanel /> */}
-                {/*  <CustomCursor /> */}
             </div>
+            :
+            <div className="w-full h-screen flex items-center justify-center bg-black">
+            <MoonLoader size={100} color={"#F3A705"} loading={true} className='mx-auto my-auto' />
+            </div>
+            }
         </div>
     )
 }
+
