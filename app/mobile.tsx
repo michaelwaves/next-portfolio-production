@@ -8,12 +8,12 @@ import Link from "next/link";
 import { Card } from "@/components/mobile/Card";
 import { Subtitle } from "@/components/mobile/Subtitle";
 import { SocialMedia } from "@/components/mobile/SocialMedia";
-import Footer from "@/components/Footer"
+import MobileFooter from "@/components/mobile/MobileFooter"
 import About from "@/components/About"
-import { useAppSelector } from "@/redux/hooks"
-import { getState } from "@/redux/controlsSlice"
+import { useAppSelector, useAppDispatch } from "@/redux/hooks"
+import { getState, setIsDark } from "@/redux/controlsSlice"
 import CustomCursor from "@/components/CustomCursor"
-import LightSwitch from "@/components/LightSwitch"
+import { useEffectOnce } from "react-use"
 
 const workComponents = workExperiences.map((item, i) => (
     <motion.div key={item.title} className="p-4"
@@ -56,8 +56,8 @@ const hobbyComponents = hobbies.map((item, i) => (
 
 export default function Mobile() {
     const [index, setIndex] = useState(0) //usestate for mobile index
-    const [isDark, setIsDark] = useState(false) //usestate for dark mode
     const controlsState = useAppSelector(getState)
+    const dispatch = useAppDispatch()
     //cookies for mobile index
     useEffect(() => {
         if (hasCookie("mobileIndex")) {
@@ -66,20 +66,19 @@ export default function Mobile() {
         } else {
             setCookie("mobileIndex", "0")
         }
-    }, [])
+    }, [controlsState.isDark])
 
     useEffect(() => {
-        if (hasCookie("dark")) {
-            const dark = getCookie("dark") === "true"
-            setIsDark(dark)
+        if (getCookie("isDark") === "true") {
+            document.documentElement.classList.add("dark")
         } else {
-            setCookie("dark", "true")
-            setIsDark(true)
+            document.documentElement.classList.remove("dark")
         }
-    }, [])
+    }, [controlsState.isDark])
+
 
     return (
-        <div className={`${controlsState.lamps == 1 ? "dark" : ""}`}>
+        <div className="">
             <div className={`h-auto w-full dark:bg-black`}>
                 <div className="relative">
                     <Image src="/images/room/3.png" alt="Michael's room" width={500} height={500} />
@@ -128,7 +127,7 @@ export default function Mobile() {
                         </div>
                     </AnimatePresence>
                 </div>
-                <Footer />
+                <MobileFooter />
                 <motion.div className="fixed bottom-16 right-4"
                     whileTap={{ scale: 0.9 }}
                 >

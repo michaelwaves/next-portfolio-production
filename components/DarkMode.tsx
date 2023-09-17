@@ -1,10 +1,16 @@
-import { useAppSelector } from "@/redux/hooks";
-import { getState } from "@/redux/controlsSlice";
+import { getCookie } from "cookies-next"
+import { useEffectOnce } from "react-use"
 
 export default function DarkMode({ children }: { children: React.ReactNode }) {
-    const controlsState = useAppSelector(getState)
+    useEffectOnce(() => {
+        if (getCookie("isDark") === "true") {
+            document.documentElement.classList.add("dark")
+        } else {
+            document.documentElement.classList.remove("dark")
+        }
+    })
     return (
-        <div className={`${controlsState.lamps == 1 ? "dark" : ""}`}>
+        <div className="">
             {children}
         </div>
 

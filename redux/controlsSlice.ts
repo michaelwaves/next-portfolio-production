@@ -19,6 +19,7 @@ export interface ControlsState {
 }
 const initialState: ControlsState = {
     darkMode: "light",
+    isDark:false,
     notes: true,
     music: true,
     sound: true,
@@ -49,6 +50,10 @@ export const controlsSlice = createSlice({
         },
         changeDarkMode(state, action: PayloadAction<ControlsState["darkMode"]>) {
             state.darkMode = action.payload
+        },
+
+        setIsDark(state, action: PayloadAction<boolean>) {
+            state.isDark = action.payload
         },
 
         setMusicIndex(state, action: PayloadAction<number>) {
@@ -89,7 +94,7 @@ export const controlsSlice = createSlice({
         }
     }
 })
-export const { playMusic, pauseMusic, toggleState, handleLights, setMusicIndex, incrementMusicIndex, decrementMusicIndex, setMusicRef, setLoading, setMobileIndex } = controlsSlice.actions
+export const { setIsDark, playMusic, pauseMusic, toggleState, handleLights, setMusicIndex, incrementMusicIndex, decrementMusicIndex, setMusicRef, setLoading, setMobileIndex } = controlsSlice.actions
 export const getState = (state: any) => state.controls
 
 export default controlsSlice.reducer
