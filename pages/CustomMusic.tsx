@@ -8,6 +8,7 @@ import { useEffect, useRef } from "react"
 import { BiSkipNext, BiSkipPrevious } from 'react-icons/bi'
 import InsetButton from "@/components/InsetButton"
 import { useScroll, animated } from "@react-spring/web"
+import MusicSwitch from "@/components/MusicSwitch"
 export default function CustomMusic() {
 
     const dispatch = useAppDispatch()
@@ -78,14 +79,15 @@ export default function CustomMusic() {
                 </div>
                 <div className='header-bg'></div>
             </div>
-            <div className="mt-20 flex flex-col items-center justify-center">
-                <h2>Now Playing</h2>
-                <h1 className="title">{MusicData[musicIndex].title}</h1>
+            <div className="mt-20 flex flex-col items-center w-full justify-center">
+                <h2 className="text-s-3 dark:text-p-3">Now Playing</h2>
+                <h1 className="mx-auto">{MusicData[musicIndex].title}</h1>
             </div>
             <div className="mt-10 flex flex-row items-center justify-center gap-8">
                 <InsetButton onClick={() => dispatch(decrementMusicIndex())} className="">
                     <BiSkipPrevious className="w-12 h-12" />
                 </InsetButton>
+                <MusicSwitch />
                 <InsetButton onClick={() => dispatch(incrementMusicIndex())} className="">
                     <BiSkipNext className="w-12 h-12" />
                 </InsetButton>
