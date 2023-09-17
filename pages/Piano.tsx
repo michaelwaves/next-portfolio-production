@@ -37,8 +37,7 @@ export default function Piano() {
                         </p>
 
                     </div>
-                    <iframe className='m-auto' width="560" height="315" src="https://www.youtube.com/embed/qvu1EQo4Apc?si=rvsV1jMPrXWj_bxv" title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cWRwL5VTv20?si=HpGJAXAqWdbzVNfV" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                 </div>
             </div>
         </motion.div >
