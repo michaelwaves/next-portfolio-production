@@ -63,7 +63,7 @@ export default function Info() {
 
                 variants={sidebar}
                 animate={isOpen ? "open" : "closed"}
-                className="fixed top-0 left-0 w-full p-4 h-full overflow-y-scroll scrollbar flex flex-row items-center justify-center  bg-white dark:bg-black">
+                className="fixed top-0 left-0 w-full p-4 h-full overflow-y-scroll md:scrollbar flex flex-row items-center justify-center  bg-white dark:bg-black">
                 <div className='z-20 fixed top-0 left-0 w-full p-4 h-fit flex flex-row items-center justify-between bg-gradient-to-b from-white via-white dark:from-black dark:via-black'>
                     <div className="flex flex-row items-center justify-center">
                         <motion.button onClick={

@@ -19,7 +19,7 @@ export default function WelcomeDesk() {
     }
     return (
         <motion.div
-            exit={myExit} className="text-xl md:text-2xl fixed top-0 left-0 z-10 w-full h-full overflow-y-scroll scrollbar items-center justify-center ">
+            exit={myExit} className="text-xl md:text-2xl fixed top-0 left-0 z-10 w-full h-full overflow-y-scroll md:scrollbar items-center justify-center ">
             <div className='header-top'>
                 <h1 className='title'>Welcome Desk</h1>
                 <div className='w-1/3 flex justify-end' onClick={(e) => handleClick(e)}>

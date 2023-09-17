@@ -14,7 +14,7 @@ export default function Badminton() {
     }
     return (
         <motion.div
-            exit={myExit} className="text-xl md:text-2xl fixed top-0 left-0 z-10 w-full h-full overflow-y-scroll scrollbar items-center justify-center ">
+            exit={myExit} className="text-xl md:text-2xl fixed top-0 left-0 z-10 w-full h-full overflow-y-scroll md:scrollbar items-center justify-center ">
 
             <div className='header-top'>
                 <h1 className='title'>Badminton</h1>

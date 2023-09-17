@@ -25,7 +25,7 @@ export default function SansChat() {
     <PopupCloset reduxProperty='sansChat' >
       <div className=''>
         <label htmlFor="input" className='' />
-        <div className='max-h-40 mt-10 overflow-y-scroll scrollbar '>
+        <div className='max-h-40 mt-10 overflow-y-scroll md:scrollbar '>
           {messages.slice(1).map(m => (
             <div key={m.id} className={`${m.role === "user" ? "font-body" : "font-pixel"}`}>
               {m.role === "user" ? "human" : "skeleton"}: {m.content}
