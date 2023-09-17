@@ -14,6 +14,7 @@ import { useAppSelector, useAppDispatch } from "@/redux/hooks"
 import { getState, setIsDark } from "@/redux/controlsSlice"
 import CustomCursor from "@/components/CustomCursor"
 import { MoonLoader } from "react-spinners"
+import { myExit } from "@/utils/FramerMotionAnimations"
 
 
 const workComponents = workExperiences.map((item, i) => (
@@ -82,6 +83,7 @@ export default function Mobile({}) {
 
     return (
         <div className="">
+            <AnimatePresence>
             {isDark!=null?
             <div className={`h-auto w-full dark:bg-black`}>
                 <div className="relative">
@@ -142,10 +144,13 @@ export default function Mobile({}) {
 
             </div>
             :
-            <div className="w-full h-screen flex items-center justify-center bg-black">
+            <motion.div className="w-full h-screen flex items-center justify-center bg-black"
+            exit={{opacity:0}}
+            >
             <MoonLoader size={100} color={"#F3A705"} loading={true} className='mx-auto my-auto' />
-            </div>
+            </motion.div>
             }
+            </AnimatePresence>
         </div>
     )
 }
