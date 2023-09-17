@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: { Component: any, pageProp
                 <DarkMode>
                     <BackButton />
                     <Component {...pageProps} />
-                    <div className='w-full flex justify-end sm:hidden z-50 fixed bottom-6 pr-8'>
+                    <div className='w-full flex justify-end sm:hidden z-50 fixed bottom-6 pr-6'>
                     <LightSwitch />
                     </div>
                 </DarkMode>
