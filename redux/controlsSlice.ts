@@ -34,7 +34,7 @@ const initialState: ControlsState = {
     firstTime: true,
     recenter: false,
     pauseMusic: false,
-    mobileIndex:0,
+    mobileIndex: 0,
 }
 
 export const controlsSlice = createSlice({
@@ -70,6 +70,12 @@ export const controlsSlice = createSlice({
             state.musicIndex = state.musicIndex - 1
             //state.musicIndex = state.musicIndex===0? MusicData.length :state.musicIndex - 1 
         },
+        pauseMusic(state) {
+            state.pauseMusic = false
+        },
+        playMusic(state) {
+            state.pauseMusic = true
+        },
         handleLights(state) {
             state["main_lights"] = state["main_lights"] == 1 ? 0 : 1
             state["point_lights"] = state["point_lights"] == 1 ? 0 : 1
@@ -83,7 +89,7 @@ export const controlsSlice = createSlice({
         }
     }
 })
-export const { toggleState, handleLights, setMusicIndex, incrementMusicIndex, decrementMusicIndex, setMusicRef, setLoading, setMobileIndex } = controlsSlice.actions
+export const { playMusic, pauseMusic, toggleState, handleLights, setMusicIndex, incrementMusicIndex, decrementMusicIndex, setMusicRef, setLoading, setMobileIndex } = controlsSlice.actions
 export const getState = (state: any) => state.controls
 
 export default controlsSlice.reducer

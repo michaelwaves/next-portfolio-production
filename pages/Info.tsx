@@ -5,7 +5,7 @@ import { BsMusicNote } from 'react-icons/bs'
 import { FaVolumeMute } from 'react-icons/fa'
 import { motion } from "framer-motion";
 import { AiOutlineInfoCircle } from "react-icons/ai"
-import { toggleState } from "@/redux/controlsSlice";
+import { toggleState, playMusic, pauseMusic } from "@/redux/controlsSlice";
 import Image from "next/image";
 import Loading from "@/components/Loading";
 import { useState } from "react";
@@ -46,6 +46,14 @@ export default function Info() {
             dispatch(toggleState("musicRef"))
         }
     }
+    const handleMusic = () => {
+        if (withMusic) {
+            dispatch(pauseMusic())
+        } else {
+            dispatch(playMusic())
+        }
+        toggleMusic(!withMusic)
+    }
 
 
     return (
@@ -79,21 +87,24 @@ export default function Info() {
                     <div className="flex md:flex-row flex-col items-center gap-4 w-full justify-center">
                         <div className="flex items-center justify-center lg:flex-row flex-col gap-4">
                             <div className="intro-card">
-                                <Image src="/icons/left click.svg" alt="left click" width={40} height={40} className='rounded-full h-12 w-12 dark:bg-white' />
+                                <Image src="/icons/left click.svg" alt="left click" width={40} height={40} className='rounded-full h-12 w-12 dark:hidden block' />
+                                <Image src="/icons/left click white.svg" alt="left click" width={40} height={40} className='rounded-full h-12 w-12 hidden dark:block' />
                                 <p>Left Click Drag to Orbit</p>
                             </div>
                             <div className="intro-card">
-                                <Image src="/icons/right click.svg" alt="right click" width={40} height={40} className='rounded-full h-12 w-12 dark:bg-white' />
+                                <Image src="/icons/right click.svg" alt="right click" width={40} height={40} className='rounded-full h-12 w-12 dark:hidden block' />
+                                <Image src="/icons/right click white.svg" alt="right click" width={40} height={40} className='rounded-full h-12 w-12 hidden dark:block' />
                                 <p>Right Click Drag to Pan</p>
                             </div>
                         </div>
                         <div className="flex items-center justify-center lg:flex-row flex-col gap-4">
                             <div className="intro-card">
-                                <Image src="/icons/scroll.svg" alt="right click" width={40} height={40} className='rounded-full h-12 w-12 dark:bg-white' />
+                                <Image src="/icons/scroll.svg" alt="scroll" width={40} height={40} className='rounded-full h-12 w-12 dark:hidden block' />
+                                <Image src="/icons/scroll white.svg" alt="scroll" width={40} height={40} className='rounded-full h-12 w-12 hidden dark:block' />
                                 <p>Scroll to Zoom</p>
                             </div>
                             <div className="intro-card">
-                                <Image src="/icons/icon.svg" alt="icon" width={40} height={40} className='rounded-full h-12 w-12 dark:bg-white' />
+                                <Image src="/icons/icon.svg" alt="icon" width={40} height={40} className='rounded-full h-12 w-12' />
                                 <p>Click on objects to explore</p>
                             </div>
                         </div>
@@ -101,7 +112,7 @@ export default function Info() {
                     <div className="flex flex-col items-center justify-center">
                         <h2>Music?</h2>
                         <div
-                            onClick={() => toggleMusic(!withMusic)}
+                            onClick={() => handleMusic()}
                             className={`w-16 h-10 flex rounded-full p-2 cursor-pointer dark:bg-p-3 bg-s-3  ${!withMusic ? "justify-start" : "justify-end"} items-center`}>
                             <motion.button
                                 layout
