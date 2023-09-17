@@ -56,6 +56,7 @@ const hobbyComponents = hobbies.map((item, i) => (
 
 export default function Mobile() {
     const [index, setIndex] = useState(0) //usestate for mobile index
+    const [isDark, setIsDark] = useState(false) //usestate for dark mode
     const controlsState = useAppSelector(getState)
     //cookies for mobile index
     useEffect(() => {
@@ -66,6 +67,17 @@ export default function Mobile() {
             setCookie("mobileIndex", "0")
         }
     }, [])
+
+    useEffect(() => {
+        if (hasCookie("dark")) {
+            const dark = getCookie("dark") === "true"
+            setIsDark(dark)
+        } else {
+            setCookie("dark", "true")
+            setIsDark(true)
+        }
+    }, [])
+
     return (
         <div className={`${controlsState.lamps == 1 ? "dark" : ""}`}>
             <div className={`h-auto w-full dark:bg-black`}>

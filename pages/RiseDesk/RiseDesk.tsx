@@ -37,13 +37,14 @@ export default function RiseDesk() {
                 <div className='header-bg'></div>
             </div>
             <div className="tldr-box">
-                <div className="object-cover md:w-1/2 w-full h-[500px]">
+                <Image src="/images/risedeskmobile.png" alt="realistic render of a small white desk" width={1000} height={1000} className="object-cover w-full block md:hidden" />
+                <div className="object-cover md:w-1/2 w-full h-[500px] hidden md:block">
                     <div className='fixed z-10'>
                         <ColorSelector colors={[
-                            "#323353",
-                            "#484a77",
-                            "#4d65b4",
-                            "#4d9be6",
+                            "#000000",
+                            "#777777",
+                            "#491500",
+                            "#F18100",
                             "#8fd3ff"]} />
                     </div>
                     <Canvas>

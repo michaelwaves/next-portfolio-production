@@ -53,8 +53,8 @@ const ColorSelector: React.FC<ColorSelectorProps> = ({ colors }) => {
     return (
         <div ref={menuRef}
 
-            className=' bg-s-4 p-2 rounded-xl z-50 flex flex-col items-center justify-center fixed '>
-            <button onClick={handleButtonClick} className="p-2 rounded-full bg-s-3 mb-4">Colors</button>
+            className=' bg-s-4 dark:bg-p-4 p-2 rounded-xl z-50 flex flex-col items-center justify-center fixed '>
+            <button onClick={handleButtonClick} className="p-2 rounded-full bg-s-3 dark:bg-p-3 mb-4">Colors</button>
             <animated.span style={arrowAnimation}
                 className="absolute bottom-4 w-12 h-12 z-10">
                 <button onClick={handleArrowClick}>

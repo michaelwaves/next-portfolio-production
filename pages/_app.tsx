@@ -4,6 +4,7 @@ import DarkMode from '@/components/DarkMode';
 import '@/app/globals.css';
 import BackButton from '@/components/mobile/BackButton';
 import { Lilita_One, Audiowide, STIX_Two_Text, Indie_Flower, VT323 } from 'next/font/google'
+import LightSwitch from '@/components/LightSwitch';
 const lilitaOne = Lilita_One({ subsets: ['latin'], weight: ["400"], variable: "--font-lilita" })
 const audiowide = Audiowide({ subsets: ['latin'], weight: ["400"], variable: "--font-audiowide" })
 const indie = Indie_Flower({ subsets: ['latin'], weight: ["400"], variable: "--font-indie" })
@@ -18,6 +19,9 @@ export default function App({ Component, pageProps }: { Component: any, pageProp
                 <DarkMode>
                     <BackButton />
                     <Component {...pageProps} />
+                    <div className='w-full flex justify-end sm:hidden z-50 fixed bottom-6 pr-8'>
+                    <LightSwitch />
+                    </div>
                 </DarkMode>
             </main>
         </Provider>
