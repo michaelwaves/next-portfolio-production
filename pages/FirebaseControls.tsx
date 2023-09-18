@@ -1,7 +1,9 @@
 import { getDocs, addDoc, query, collection, setDoc, doc, deleteDoc } from "firebase/firestore/lite";
 import { db } from "@/components/Firebase";
+import { useState } from "react";
 
 export default function FirebaseControls(){
+    const [message, setMessage] = useState("");
     const handleFilterChats = async() =>{
         const collectionRef = collection(db, "chats");
         const querySnapshot = await getDocs(collectionRef);
@@ -15,8 +17,10 @@ export default function FirebaseControls(){
                 console.log(document.data().messages);
                 try{
                 setDoc(doc(filteredChatsRef,id), document.data());
+                setMessage("Chats filtered!");
                 }catch(error){
                     console.log(error);
+                    setMessage("Error filtering chats!");
                 }
             }
         }
@@ -29,16 +33,18 @@ export default function FirebaseControls(){
             let id = document.id;
             try{
                 deleteDoc(doc(collectionRef, id));
+                setMessage("Collection cleared!");
             }catch(error){
                 console.log(error);
+                setMessage("Error clearing collection!");
             }
         });
     }
     return(
         <div>
-            <h1>Filtered Firebase Chat</h1>
+            <h1>Firebasecontrols</h1>
             <button onClick={handleFilterChats} className="bg-s-3 p-2 rounded-xl">Filter Chats</button>
-            <button onClick={clearCollection} className="bg-s-3 p-2 rounded-xl">Clear Collection</button>
+            {/* <button onClick={clearCollection} className="bg-s-3 p-2 rounded-xl">Clear Collection</button> */}
         </div>
     )
 }
