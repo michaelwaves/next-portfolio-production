@@ -44,6 +44,7 @@ export default function FirebaseControls(){
         <div>
             <h1>Firebasecontrols</h1>
             <button onClick={handleFilterChats} className="bg-s-3 p-2 rounded-xl">Filter Chats</button>
+            <p>{message}</p>
             {/* <button onClick={clearCollection} className="bg-s-3 p-2 rounded-xl">Clear Collection</button> */}
         </div>
     )
