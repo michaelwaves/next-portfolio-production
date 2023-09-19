@@ -39,7 +39,10 @@ export default function Openai(): JSX.Element {
 
     useEffect(() => {
         try {
+            const newMessages = state.messages.slice(1);
+            if (newMessages.length > 0) {
             updateDoc(doc(collectionRef, dateString), { messages: state.messages.slice(1) })
+            }
         } catch (error) {
             console.log(error)
         }
