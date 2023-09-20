@@ -113,6 +113,11 @@ export default function Scene() {
 
         return null
     }
+
+    useEffect(() => {
+        document.body.style.cursor = controlsState.hovered == "hoverSmall" ? 'pointer' : 'auto'
+    }, [controlsState.hovered])
+
     return (
         <main className={`${controlsState.lamps == 1 ? "dark" : ""} relative h-full w-full bg-black ${lilitaOne.variable} ${audiowide.variable} ${indie.variable} ${stix.variable} ${vt323.variable} ${pressStart2P.variable}`}>
             <CustomCursor />

@@ -620,7 +620,10 @@ export function Room(props: JSX.IntrinsicElements['group']) {
           <group name="lumigui_light001" position={[-2.75, 0.15, -1.02]}>
             <pointLight name="lumigui_light001_Orientation" intensity={10 * INTENSITY_MULTIPLIER} decay={2} color="#ff962d" rotation={[-Math.PI / 2, 0, 0]} />
           </group>
-          <mesh name="note011" geometry={nodes.note011.geometry} material={materials.notes} />
+          <mesh name="note011" geometry={nodes.note011.geometry} material={materials.notes}
+            onPointerEnter={handlePointerEnter}
+            onPointerOut={handlePointerOut}
+          />
           <mesh name="vocalverse" geometry={nodes.vocalverse.geometry} material={materials.hackathons}
             onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleState("vocalverse")) }}
             onPointerEnter={handlePointerEnter}
