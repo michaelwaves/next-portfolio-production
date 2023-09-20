@@ -10,7 +10,7 @@ import Image from "next/image";
 import Loading from "@/components/Loading";
 import { useEffect, useState } from "react";
 import About from "@/components/About";
-import NProgress from "nprogress";
+import Counter from "@/components/Counter";
 
 const sidebar = {
     open: (height = 1000) => ({
@@ -138,7 +138,12 @@ export default function Info() {
                             </motion.button>
                         </div>
                     </div>
-                    {controlsState.loading ? <Loading /> :
+                    {controlsState.loading ?
+                        <div>
+                            <Loading />
+                            <Counter />
+                        </div>
+                        :
                         <div className="h-40 mb-20">
                             <div className={`font-heading relative w-fit h-fit overflow-hidden pb-2 rounded-xl mx-auto`}>
                                 <button
