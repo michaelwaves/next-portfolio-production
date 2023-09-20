@@ -322,9 +322,9 @@ export function Room(props: JSX.IntrinsicElements['group']) {
         </Selection> */}
         <mesh name="Windows_Sill" geometry={nodes.Windows_Sill.geometry} material={materials.Sill_material} />
         <mesh name="windowframe" geometry={nodes.windowframe.geometry} material={materials['gray.004']} />
-        {/* <animated.mesh onClick={(e) => handleClick(e)} scale-z={curtain_r} name="curtain_r" geometry={nodes.curtain_r.geometry} material={materials.hotel_sheet} /> */}
+
         <mesh name="curtain_top" geometry={nodes.curtain_top.geometry} material={materials.gray} />
-        {/*   <animated.mesh onClick={(e) => handleClick(e)} scale-z={curtain_l} name="curtain_l" geometry={nodes.curtain_l.geometry} material={materials.hotel_sheet} /> */}
+
         <Curtains />
         <mesh name="pillow" geometry={nodes.pillow.geometry} material={materials['gray.001']}
           onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleStatePopup("pillow")) }}
@@ -355,7 +355,7 @@ export function Room(props: JSX.IntrinsicElements['group']) {
         <mesh name="Handle001" geometry={nodes.Handle001.geometry} material={materials.Plastic_Handle_material} />
         <mesh name="Handle" geometry={nodes.Handle.geometry} material={materials.Plastic_Handle_material} />
         <animated.mesh onClick={(e) => handleClick(e)} position-x={desk_5} name="desk_5" geometry={nodes.desk_5.geometry} material={materials['gray.001']}
-
+          onPointerOver={(e) => e.stopPropagation()}
         >
           <group name="extracurriculars_drawer_light" position={[2.92, 0.47, 2.2]}>
             <pointLight name="extracurriculars_drawer_light_Orientation" intensity={10 * INTENSITY_MULTIPLIER} decay={2} color="#ff962d" rotation={[-Math.PI / 2, 0, 0]} />
@@ -405,7 +405,9 @@ export function Room(props: JSX.IntrinsicElements['group']) {
             <mesh name="welcome_window" geometry={nodes.welcome_window.geometry} material={nodes.welcome_window.material} />
           </group>
         </animated.mesh>
-        <animated.mesh onClick={(e) => handleClick(e)} position-x={desk_6} name="desk_6" geometry={nodes.desk_6.geometry} material={materials['gray.001']}>
+        <animated.mesh onClick={(e) => handleClick(e)} position-x={desk_6} name="desk_6" geometry={nodes.desk_6.geometry} material={materials['gray.001']}
+          onPointerOver={(e) => e.stopPropagation()}
+        >
           <group name="hobbies_drawer_light" position={[2.92, 0.13, 2.16]}>
             <pointLight name="hobbies_drawer_light_Orientation" intensity={10 * INTENSITY_MULTIPLIER} decay={2} color="#ff962d" rotation={[-Math.PI / 2, 0, 0]} />
           </group>
@@ -489,7 +491,9 @@ export function Room(props: JSX.IntrinsicElements['group']) {
             onPointerOut={handlePointerOut} />
           {/*   <mesh name="ramuri" onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleDesk("ramuri")) }} geometry={nodes.ramuri.geometry} material={materials.ramuri} /> */}
         </animated.mesh>
-        <animated.mesh onClick={(e) => handleClick(e)} position-x={desk_3} name="desk_3" geometry={nodes.desk_3.geometry} material={materials['gray.001']}>
+        <animated.mesh onClick={(e) => handleClick(e)} position-x={desk_3} name="desk_3" geometry={nodes.desk_3.geometry} material={materials['gray.001']}
+          onPointerOver={(e) => e.stopPropagation()}
+        >
           <group name="diploma" onClick={(e) => { e.stopPropagation(), reduxDispatch(toggleDesk("education")) }}
             onPointerEnter={handlePointerEnter}
             onPointerOut={handlePointerOut}>
