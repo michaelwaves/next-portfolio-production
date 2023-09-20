@@ -9,6 +9,7 @@ import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { toggleState } from '@/redux/deskSlice'
 import { useAppDispatch } from '@/redux/hooks'
+import { setHovered } from '@/redux/controlsSlice'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -26,9 +27,17 @@ type ContextType = Record<string, React.ForwardRefExoticComponent<JSX.IntrinsicE
 export function Headphones(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/headphones.glb') as GLTFResult
   const dispatch = useAppDispatch()
+  const handlePointerEnter = () => {
+    dispatch(setHovered('hoverSmall'))
+  }
+  const handlePointerOut = () => {
+    dispatch(setHovered('unhover'))
+  }
   return (
     <group {...props} dispose={null}
       onClick={() => { dispatch(toggleState("headphones")) }}
+      onPointerEnter={handlePointerEnter}
+      onPointerOut={handlePointerOut}
     >
       <mesh geometry={nodes.Cube087.geometry} material={materials['gray.005']} />
       <mesh geometry={nodes.Cube087_1.geometry} material={materials['gray.001']} />

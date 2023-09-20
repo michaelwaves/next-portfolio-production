@@ -15,11 +15,12 @@ export interface ControlsState {
     firstTime: boolean,
     recenter: boolean,
     mobileIndex: number,
+    hovered: string,
     [props: string]: boolean | string | number | [number, number, number]
 }
 const initialState: ControlsState = {
     darkMode: "light",
-    isDark:false,
+    isDark: true,
     notes: true,
     music: true,
     sound: true,
@@ -36,6 +37,7 @@ const initialState: ControlsState = {
     recenter: false,
     pauseMusic: false,
     mobileIndex: 0,
+    hovered: "unhover",
 }
 
 export const controlsSlice = createSlice({
@@ -85,16 +87,20 @@ export const controlsSlice = createSlice({
             state["main_lights"] = state["main_lights"] == 1 ? 0 : 1
             state["point_lights"] = state["point_lights"] == 1 ? 0 : 1
             state["lamps"] = state["lamps"] == 1 ? 0 : 1
+            state.isDark = !state.isDark
         },
         setMusicRef(state, action: PayloadAction<any>) {
             state.musicRef = action.payload
         },
         setMobileIndex(state, action: PayloadAction<number>) {
             state.mobileIndex = action.payload
+        },
+        setHovered(state, action: PayloadAction<string>) {
+            state.hovered = action.payload
         }
     }
 })
-export const { setIsDark, playMusic, pauseMusic, toggleState, handleLights, setMusicIndex, incrementMusicIndex, decrementMusicIndex, setMusicRef, setLoading, setMobileIndex } = controlsSlice.actions
+export const { setHovered, setIsDark, playMusic, pauseMusic, toggleState, handleLights, setMusicIndex, incrementMusicIndex, decrementMusicIndex, setMusicRef, setLoading, setMobileIndex } = controlsSlice.actions
 export const getState = (state: any) => state.controls
 
 export default controlsSlice.reducer
