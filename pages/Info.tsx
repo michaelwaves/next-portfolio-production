@@ -8,8 +8,9 @@ import { AiOutlineInfoCircle } from "react-icons/ai"
 import { toggleState, playMusic, pauseMusic } from "@/redux/controlsSlice";
 import Image from "next/image";
 import Loading from "@/components/Loading";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import About from "@/components/About";
+import NProgress from "nprogress";
 
 const sidebar = {
     open: (height = 1000) => ({
@@ -55,6 +56,14 @@ export default function Info() {
         toggleMusic(!withMusic)
     }
 
+    /*   useEffect(() => {
+          if (controlsState.loading) {
+              NProgress.start()
+          } else {
+              NProgress.done()
+          }
+      }, [controlsState.loading])
+   */
 
     return (
         <div className="fixed bottom-0 right-0 "

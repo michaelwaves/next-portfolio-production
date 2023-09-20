@@ -537,7 +537,9 @@ export function Room(props: JSX.IntrinsicElements['group']) {
             onPointerOut={handlePointerOut}
           />
         </animated.mesh>
-        <mesh name="desk" geometry={nodes.desk.geometry} material={materials.gray} onClick={(e) => clickShield(e)} />
+        <mesh name="desk" geometry={nodes.desk.geometry} material={materials.gray} onClick={(e) => clickShield(e)}
+          onPointerOver={(e) => { e.stopPropagation() }}
+        />
         <group name="lotion"
           onPointerEnter={handlePointerEnter}
           onPointerOut={handlePointerOut}
