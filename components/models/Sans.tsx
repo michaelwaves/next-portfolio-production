@@ -4,12 +4,12 @@ Command: npx gltfjsx@6.1.4 -t sans.glb
 */
 
 import * as THREE from 'three'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { useAppDispatch } from '@/redux/hooks'
 import { toggleStatePopup } from '@/redux/closetSlice'
-
+import { setHovered } from '@/redux/controlsSlice'
 type GLTFResult = GLTF & {
   nodes: {
     eye_left: THREE.Mesh
@@ -57,11 +57,20 @@ export function Sans(props: JSX.IntrinsicElements['group']) {
     dispatch(toggleStatePopup('sansChat'))
   }
 
+  const handleMouseEnter = () => {
+    dispatch(setHovered('hoverSmall'))
+  }
+  const handleMouseOut = () => {
+    dispatch(setHovered('unhover'))
+  }
   useEffect(() => {
     actions['idle_sans']?.play()
   }, [actions])
   return (
-    <group ref={group} {...props} dispose={null} onClick={(e) => handleClick(e)}>
+    <group ref={group} {...props} dispose={null} onClick={(e) => handleClick(e)}
+      onPointerEnter={handleMouseEnter}
+      onPointerOut={handleMouseOut}
+    >
       <group name="Scene" >
         <group name="Armature" position={[-3.62, 0.91, -0.12]} scale={0.43}>
           <group name="Bone" position={[0, 0.02, 0.04]}>

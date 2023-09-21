@@ -9,6 +9,7 @@ import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { toggleStatePopup } from '@/redux/deskSlice'
 import { useAppDispatch } from '@/redux/hooks'
+import { setHovered } from '@/redux/controlsSlice'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -26,12 +27,21 @@ type ContextType = Record<string, React.ForwardRefExoticComponent<JSX.IntrinsicE
 export function Passport(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/passport.glb') as GLTFResult
   const dispatch = useAppDispatch()
+  const handlePointerEnter = () => {
+    dispatch(setHovered('hoverSmall'))
+  }
+  const handlePointerOut = () => {
+    dispatch(setHovered('unhover'))
+  }
   const handleClick = (e: any) => {
     e.stopPropagation()
     dispatch(toggleStatePopup('passport'))
   }
   return (
-    <group {...props} dispose={null} onClick={(e) => handleClick(e)}>
+    <group {...props} dispose={null} onClick={(e) => handleClick(e)}
+      onPointerEnter={handlePointerEnter}
+      onPointerOut={handlePointerOut}
+    >
       <mesh geometry={nodes.Cube002.geometry} material={materials['passport.001']} />
       <mesh geometry={nodes.Cube002_1.geometry} material={materials['white.001']} />
     </group>

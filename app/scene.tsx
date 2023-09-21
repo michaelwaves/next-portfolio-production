@@ -80,6 +80,7 @@ import { toggleState, setLoading } from "@/redux/controlsSlice";
 
 //sans
 import SansChat2 from "@/pages/Sans/SansChat2";
+import CustomCursor from "@/components/CustomCursor";
 
 export default function Scene() {
 
@@ -112,9 +113,14 @@ export default function Scene() {
 
         return null
     }
+
+    useEffect(() => {
+        document.body.style.cursor = controlsState.hovered == "hoverSmall" ? 'pointer' : 'auto'
+    }, [controlsState.hovered])
+
     return (
         <main className={`${controlsState.lamps == 1 ? "dark" : ""} relative h-full w-full bg-black ${lilitaOne.variable} ${audiowide.variable} ${indie.variable} ${stix.variable} ${vt323.variable} ${pressStart2P.variable}`}>
-
+            <CustomCursor />
             <div className={`${deskState.render || closetState.render ? "h-40" : "h-screen"}`}>
                 <Canvas>
                     {deskState.render && <DisableRender />}

@@ -9,6 +9,7 @@ import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { useAppDispatch } from '@/redux/hooks'
 import { toggleState } from '@/redux/deskSlice'
+import { setHovered } from '@/redux/controlsSlice'
 
 export type GLTFResult = GLTF & {
   nodes: {
@@ -28,10 +29,18 @@ type ContextType = Record<string, React.ForwardRefExoticComponent<JSX.IntrinsicE
 export function Cloudbreak(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/cloudbreak.glb') as GLTFResult
   const dispatch = useAppDispatch()
+  const handlePointerEnter = () => {
+    dispatch(setHovered('hoverSmall'))
+  }
+  const handlePointerOut = () => {
+    dispatch(setHovered('unhover'))
+  }
   const plastic = new THREE.MeshStandardMaterial({ color: 0xFFFFFF, opacity: 0.5 })
   return (
     <group {...props} dispose={null} name="cloudbreak"
       onClick={(e) => { e.stopPropagation(); dispatch(toggleState('cloudbreak')) }}
+      onPointerEnter={handlePointerEnter}
+      onPointerOut={handlePointerOut}
     >
       <group position={[-0.006, 0, 0]}>
         <group position={[0.51, 0, 0]}>

@@ -22,6 +22,7 @@ type GLTFResult = GLTF & {
 export function Curtains(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/curtains.glb') as GLTFResult
   const [open, setOpen] = useState(false)
+
   const { curtain_l, curtain_r } = useSpring({
     curtain_l: open ? 3.5 : 1,
     curtain_r: open ? 3 : 1,

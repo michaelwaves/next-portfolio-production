@@ -22,6 +22,17 @@ function Box(props: any) {
 export default function App() {
     const hoverDispatch = (mesh: any) => ({ type: 'hover', mesh })
     const unhoverDispatch = (mesh: any) => ({ type: 'unhover', mesh })
+    //option 1, useState
+    const [hovered, setHovered] = useState<string | null>(null)
+
+    const handlePointerOver = (e: any) => {
+        setHovered(e.eventObject.name)
+    }
+    const handlePointerOut = () => {
+        setHovered(null)
+
+    }
+    //option 2, useReducer
     const [hoverState, setHoverState] = useReducer((state: any, action: any) => {
         switch (action.type) {
             case 'hover':
@@ -43,7 +54,7 @@ export default function App() {
     return (
         <div className='w-full h-screen'>
             <Canvas dpr={[1, 2]}>
-                <ambientLight intensity={0.5} />
+                <ambientLight intensity={1} />
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
                 <pointLight position={[-10, -10, -10]} />
                 <Selection>
@@ -52,11 +63,17 @@ export default function App() {
                     </EffectComposer>
                     <Box position={[-1, 0, 0]} />
                     <Box position={[1, 0, 0]} />
-                    <Select enabled={hoverState.includes('sans')}>
-                        <Sans position={[0, 0, 0]} onPointerEnter={() => setHoverState(hoverDispatch("sans"))} onPointerLeave={() => setHoverState(unhoverDispatch("sans"))} />
+                    {/*<Select enabled={hoverState.includes('sans')}>
+                         <Sans position={[0, 0, 0]} onPointerEnter={() => setHoverState(hoverDispatch("sans"))} onPointerLeave={() => setHoverState(unhoverDispatch("sans"))} />
+                    </Select> */}
+                    <Select enabled={hovered == "sans"}>
+                        <Sans position={[0, 0, 0]} onPointerOver={handlePointerOver} onPointerOut={handlePointerOut} name='sans' />
                     </Select>
-                    <Select enabled={hoverState.includes('headphones')}>
-                        <Headphones position={[0, 0, 0]} onPointerEnter={() => setHoverState(hoverDispatch("headphones"))} onPointerLeave={() => setHoverState(unhoverDispatch("headphones"))} />
+                    {/*<Select enabled={hoverState.includes('headphones')}>
+                         <Headphones position={[0, 0, 0]} onPointerEnter={() => setHoverState(hoverDispatch("headphones"))} onPointerLeave={() => setHoverState(unhoverDispatch("headphones"))} /> 
+                    </Select>*/}
+                    <Select enabled={hovered == "headphones"}>
+                        <Headphones position={[0, 0, 0]} onPointerOver={handlePointerOver} onPointerOut={handlePointerOut} name='headphones' />
                     </Select>
                 </Selection>
             </Canvas>
