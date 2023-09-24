@@ -135,13 +135,13 @@ export default function Mobile({ }) {
                             </AnimatePresence>
                         </div>
                         <MobileFooter />
-                        <motion.div className="fixed bottom-16 right-4"
+                        {/* <motion.div className="fixed bottom-16 right-4"
                             whileTap={{ scale: 0.9 }}
                         >
                             <Link href="/chat">
                                 <Image src="/images/svgs/chatright.svg" width={20} height={20} alt="Click to Chat" className="w-12 h-12 dark:fill-white" />
                             </Link>
-                        </motion.div>
+                        </motion.div> */}
 
                     </div>
                     :
