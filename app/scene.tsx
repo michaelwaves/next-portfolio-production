@@ -134,7 +134,7 @@ export default function Scene() {
                         <Room />
                         <Window />
                         {/* <Pikachu />*/}
-                        <Sans />
+                        {/* <Sans /> */}
                         <Headphones />
                         <PassportModel position={[3, 1.29, 0.65]} scale={0.8} rotation-y={Math.PI / 2} />
                     </Suspense>
