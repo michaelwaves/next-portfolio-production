@@ -40,7 +40,7 @@ export default function PrintingClub() {
                             <span>Ran 3D printing and 3D modelling Events</span>
                         </Trail>
                     </div>
-                    <button onClick={() => window.open("https://devpost.com/software/kingsley-3qtkf1", "_blank")} className="tldr-button">
+                    <button onClick={() => window.open("https://www.trintechclub.com/", "_blank")} className="tldr-button">
                         Checkout Project
                     </button>
                 </div>
